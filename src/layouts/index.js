@@ -57,6 +57,9 @@ const Header = () => (
         <ListItem><FontAwesomeIcon icon={faFlickr} /></ListItem>
         <ListItem><FontAwesomeIcon icon={faFacebook} /></ListItem>
         <ListItem><FontAwesomeIcon icon={faYoutube} /></ListItem>
+        <ListItem>EN</ListItem>
+        <ListItem>|</ListItem>
+        <ListItem>VN</ListItem>
       </ul>
     </div>
   </header>
