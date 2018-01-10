@@ -2,16 +2,21 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import Link from 'gatsby-link';
 import Helmet from 'react-helmet';
+import FontAwesomeIcon from '@fortawesome/react-fontawesome';
+import { faInstagram, faFlickr, faFacebook, faYoutube } from '@fortawesome/fontawesome-free-brands'
 
 const ListItem = (props) => (
   <li
     style={{
       display: 'inline-block',
-      marginRight: '1rem'
+      marginRight: '1rem',
     }}
   >
     <Link
       to="/"
+      style={{
+        color: 'white'
+      }}
       >
     {props.children}
     </Link>
@@ -21,7 +26,7 @@ const ListItem = (props) => (
 const Header = () => (
   <header
     style={{
-      // background: 'rebeccapurple',
+      background: 'rebeccapurple',
       marginBottom: '1.45rem'
     }}
   >
@@ -36,7 +41,7 @@ const Header = () => (
         <Link
           to="/"
           style={{
-            // color: 'white',
+            color: 'white',
             textDecoration: 'none'
           }}
         >
@@ -48,6 +53,10 @@ const Header = () => (
         <ListItem>About</ListItem>
         <ListItem>Gallery</ListItem>
         <ListItem>Contact</ListItem>
+        <ListItem><FontAwesomeIcon icon={faInstagram} /></ListItem>
+        <ListItem><FontAwesomeIcon icon={faFlickr} /></ListItem>
+        <ListItem><FontAwesomeIcon icon={faFacebook} /></ListItem>
+        <ListItem><FontAwesomeIcon icon={faYoutube} /></ListItem>
       </ul>
     </div>
   </header>
