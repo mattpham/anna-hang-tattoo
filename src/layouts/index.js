@@ -23,7 +23,7 @@ const ListItem = (props) => (
   </li>
 );
 
-const Header = () => (
+const Header = (props) => (
   <header
     style={{
       background: 'rebeccapurple',
@@ -37,7 +37,22 @@ const Header = () => (
         padding: '1.45rem 1.0875rem'
       }}
     >
-      <h1 style={{ display: 'inline'}}>
+      {props.children}
+    </div>
+  </header>
+);
+
+const TemplateWrapper = ({ data, children }) => (
+  <div>
+    <Helmet
+      title={data.site.siteMetadata.title}
+      meta={[
+        { name: 'description', content: 'Tattoo' },
+        { name: 'keywords', content: 'tattoo, art' }
+      ]}
+    />
+    <Header>
+    <h1 style={{ display: 'inline'}}>
         <Link
           to="/"
           style={{
@@ -45,7 +60,7 @@ const Header = () => (
             textDecoration: 'none'
           }}
         >
-          Tattoo Site
+          {data.site.siteMetadata.title}
         </Link>
       </h1>
       <ul style={{ listStyle: 'none', float: 'right' }}>
@@ -61,20 +76,7 @@ const Header = () => (
         <ListItem>|</ListItem>
         <ListItem>VN</ListItem>
       </ul>
-    </div>
-  </header>
-);
-
-const TemplateWrapper = ({ children }) => (
-  <div>
-    <Helmet
-      title="Tattoo Site"
-      meta={[
-        { name: 'description', content: 'Tattoo' },
-        { name: 'keywords', content: 'tattoo, art' }
-      ]}
-    />
-    <Header />
+    </Header>
     <main
       style={{
         margin: '0 auto',
@@ -91,5 +93,15 @@ const TemplateWrapper = ({ children }) => (
 TemplateWrapper.propTypes = {
   children: PropTypes.func
 };
+
+export const query = graphql`
+  query LayoutQuery {
+    site {
+      siteMetadata {
+        title
+      }
+    }
+  }
+`;
 
 export default TemplateWrapper;

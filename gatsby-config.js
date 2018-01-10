@@ -1,6 +1,6 @@
 module.exports = {
   siteMetadata: {
-    title: `Gatsby Default Starter`
+    title: `Anna Hang Tattoo`
   },
   pathPrefix: '/tattoo-site',
   plugins: [
