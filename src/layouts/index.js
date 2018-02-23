@@ -71,8 +71,8 @@ const TemplateWrapper = ({ data, children }) => (
         <ul
           style={{
             display: 'grid',
-            'grid-auto-flow': 'column',
-            'grid-gap': '1rem',
+            gridAutoFlow: 'column',
+            gridGap: '1rem',
             listStyle: 'none',
           }}>
           <li style={{margin: 0}}><Link to="/">Home</Link></li>
@@ -86,8 +86,8 @@ const TemplateWrapper = ({ data, children }) => (
         <ul
           style={{
             display: 'grid',
-            'grid-auto-flow': 'column',
-            'grid-gap': '1rem',
+            gridAutoFlow: 'column',
+            gridGap: '1rem',
             listStyle: 'none',
           }}>
           <li style={{margin: 0}}><Link to="/"><FontAwesomeIcon icon={faInstagram} /></Link></li>
@@ -99,8 +99,8 @@ const TemplateWrapper = ({ data, children }) => (
         <ul
           style={{
             display: 'grid',
-            'grid-auto-flow': 'column',
-            'grid-gap': '1rem',
+            gridAutoFlow: 'column',
+            gridGap: '1rem',
             listStyle: 'none',
           }}>
           <li style={{margin: 0}}><Link to="/">English</Link></li>
