@@ -5,45 +5,45 @@ import Helmet from 'react-helmet';
 import FontAwesomeIcon from '@fortawesome/react-fontawesome';
 import { faInstagram, faFlickr, faFacebook, faYoutube } from '@fortawesome/fontawesome-free-brands'
 
-const ListItem = (props) => (
-  <li
-    style={{
-      display: 'inline-block',
-      marginRight: '1rem',
-    }}
-  >
-    <Link
-      to="/"
-      style={{
-        color: 'white'
-      }}
-      >
-    {props.children}
-    </Link>
-  </li>
-);
+// const ListItem = (props) => (
+//   <li
+//     style={{
+//       display: 'inline-block',
+//       marginRight: '1rem',
+//     }}
+//   >
+//     <Link
+//       to="/"
+//       style={{
+//         color: 'white'
+//       }}
+//       >
+//     {props.children}
+//     </Link>
+//   </li>
+// );
 
-const Header = (props) => (
-  <header
-    style={{
-      background: 'rebeccapurple',
-      marginBottom: '1.45rem'
-    }}
-  >
-    <div
-      style={{
-        margin: '0 auto',
-        maxWidth: 960,
-        padding: '1.45rem 1.0875rem'
-      }}
-    >
-      {props.children}
-    </div>
-  </header>
-);
+// const Header = (props) => (
+//   <header
+//     style={{
+//       background: 'rebeccapurple',
+//       marginBottom: '1.45rem'
+//     }}
+//   >
+//     <div
+//       style={{
+//         margin: '0 auto',
+//         maxWidth: 960,
+//         padding: '1.45rem 1.0875rem'
+//       }}
+//     >
+//       {props.children}
+//     </div>
+//   </header>
+// );
 
 const TemplateWrapper = ({ data, children }) => (
-  <div>
+  <div style={{display: 'grid', justifyContent: 'center', gridGap: '1rem'}}>
     <Helmet
       title={data.site.siteMetadata.title}
       meta={[
@@ -51,42 +51,88 @@ const TemplateWrapper = ({ data, children }) => (
         { name: 'keywords', content: 'tattoo, art' }
       ]}
     />
-    <Header>
-    <h1 style={{ display: 'inline'}}>
-        <Link
-          to="/"
+    <header
+      role="banner"
+      style={{
+        position: 'relative',
+        display: 'grid',
+        gridAutoFlow: 'column',
+        backgroundColor: '#0002',
+        padding: '0 1rem',
+      }}
+    >
+      <h1>{data.site.siteMetadata.title}</h1>
+      <nav role="menu"
+        style={{
+          display: 'flex',
+          alignItems: 'center',
+        }}>
+        {/* Site Links */}
+        <ul
           style={{
-            color: 'white',
-            textDecoration: 'none'
-          }}
-        >
-          {data.site.siteMetadata.title}
-        </Link>
-      </h1>
-      <ul style={{ listStyle: 'none', float: 'right' }}>
-        <ListItem>Home</ListItem>
-        <ListItem>About</ListItem>
-        <ListItem>Gallery</ListItem>
-        <ListItem>Contact</ListItem>
-        <ListItem><FontAwesomeIcon icon={faInstagram} /></ListItem>
-        <ListItem><FontAwesomeIcon icon={faFlickr} /></ListItem>
-        <ListItem><FontAwesomeIcon icon={faFacebook} /></ListItem>
-        <ListItem><FontAwesomeIcon icon={faYoutube} /></ListItem>
-        <ListItem>EN</ListItem>
-        <ListItem>|</ListItem>
-        <ListItem>VN</ListItem>
-      </ul>
-    </Header>
+            display: 'grid',
+            'grid-auto-flow': 'column',
+            'grid-gap': '1rem',
+            listStyle: 'none',
+          }}>
+          <li style={{margin: 0}}><Link to="/">Home</Link></li>
+          <li style={{margin: 0}}><Link to="/">About</Link></li>
+          <li style={{margin: 0}}><Link to="/">Services</Link></li>
+          <li style={{margin: 0}}><Link to="/">Gallery</Link></li>
+          <li style={{margin: 0}}><Link to="/">Contact</Link></li>
+        </ul>
+
+        {/* Social Links */}
+        <ul
+          style={{
+            display: 'grid',
+            'grid-auto-flow': 'column',
+            'grid-gap': '1rem',
+            listStyle: 'none',
+          }}>
+          <li style={{margin: 0}}><Link to="/"><FontAwesomeIcon icon={faInstagram} /></Link></li>
+          <li style={{margin: 0}}><Link to="/"><FontAwesomeIcon icon={faFacebook} /></Link></li>
+          <li style={{margin: 0}}><Link to="/"><FontAwesomeIcon icon={faFlickr} /></Link></li>
+        </ul>
+
+        {/* Language Links */}
+        <ul
+          style={{
+            display: 'grid',
+            'grid-auto-flow': 'column',
+            'grid-gap': '1rem',
+            listStyle: 'none',
+          }}>
+          <li style={{margin: 0}}><Link to="/">English</Link></li>
+          <li style={{margin: 0}}><Link to="/">Vietnamese</Link></li>
+        </ul>
+      </nav>
+
+      {/* Mobile Menu Toggle */}
+      <button
+        style={{
+          display: 'none'
+        }}
+      >
+        Menu
+      </button>
+    </header>
     <main
       style={{
         margin: '0 auto',
         maxWidth: 960,
-        padding: '0px 1.0875rem 1.45rem',
-        paddingTop: 0
       }}
     >
       {children()}
     </main>
+    <footer
+      style={{
+        display: 'grid',
+        justifyContent: 'center',
+        backgroundColor: '#0002',
+      }}>
+      &copy; 2018 Anna Hang Tattoo.
+    </footer>
   </div>
 );
 
