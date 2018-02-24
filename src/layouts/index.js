@@ -10,43 +10,6 @@ import {
   faYoutube
 } from '@fortawesome/fontawesome-free-brands';
 
-// const ListItem = (props) => (
-//   <li
-//     style={{
-//       display: 'inline-block',
-//       marginRight: '1rem',
-//     }}
-//   >
-//     <Link
-//       to="/"
-//       style={{
-//         color: 'rgba(255,255,255,.8)'
-//       }}
-//       >
-//     {props.children}
-//     </Link>
-//   </li>
-// );
-
-// const Header = (props) => (
-//   <header
-//     style={{
-//       background: 'rebeccapurple',
-//       marginBottom: '1.45rem'
-//     }}
-//   >
-//     <div
-//       style={{
-//         margin: '0 auto',
-//         maxWidth: 960,
-//         padding: '1.45rem 1.0875rem'
-//       }}
-//     >
-//       {props.children}
-//     </div>
-//   </header>
-// );
-
 const TemplateWrapper = ({ data, children }) => (
   <div style={{ display: 'grid', justifyContent: 'stretch', gridGap: '1rem', position: 'relative'}}>
     <Helmet
@@ -166,17 +129,15 @@ const TemplateWrapper = ({ data, children }) => (
         </button>
       </div>
     </header>
-    <main
+    <div
       style={{
         display: 'grid',
         justifyContent: 'stretch',
         gridGap: '2rem',
-        gridTemplateAreas: "'s1 main s2'",
-        gridTemplateColumns: '1fr auto 1fr'
       }}
     >
       {children()}
-    </main>
+    </div>
     <footer
       style={{
         display: 'grid',
