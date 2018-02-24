@@ -1,5 +1,8 @@
 import React from 'react';
 import Link from 'gatsby-link';
+import FontAwesomeIcon from '@fortawesome/react-fontawesome';
+import { faPhone, faEnvelope, faMapMarker } from '@fortawesome/fontawesome-free-solid/';
+
 import logo from '../images/logo.svg';
 import map from '../images/map-dark.jpg';
 
@@ -383,6 +386,9 @@ const IndexPage = () => (
         }}
       >
         <h2>Contact</h2>
+        <div className="contact-phone"><FontAwesomeIcon icon="phone" />
+<span> (714) 299-3387</span></div>
+        <div className="contact-email"><FontAwesomeIcon icon="envelope" /><span> info@annahangtattoovn.com</span></div>
       </section>
       <section
         style={{
@@ -390,6 +396,7 @@ const IndexPage = () => (
         }}
       >
         <h2>Address</h2>
+        <div className="contact-address"><FontAwesomeIcon icon={faMapMarker} /> 13071 Brookhurst St., #225 Garden Grove, California</div>
       </section>
       <section
         style={{
