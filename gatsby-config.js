@@ -5,6 +5,7 @@ module.exports = {
   pathPrefix: '/tattoo-site',
   plugins: [
     'gatsby-plugin-react-next',
+    'gatsby-plugin-styled-components',
     `gatsby-plugin-react-helmet`,
     {
       resolve: `gatsby-plugin-typography`,
