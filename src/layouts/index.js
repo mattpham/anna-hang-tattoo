@@ -9,9 +9,11 @@ import {
   faFacebook,
   faYoutube
 } from '@fortawesome/fontawesome-free-brands';
+import { GridContainer, Header, Nav, NavList } from '../components';
 
 const TemplateWrapper = ({ data, children }) => (
-  <div style={{ display: 'grid', justifyContent: 'stretch', gridGap: '1rem', position: 'relative'}}>
+  // <div style={{ display: 'grid', justifyContent: 'stretch', gridGap: '1rem', position: 'relative'}}>
+  <GridContainer>
     <Helmet
       title={data.site.siteMetadata.title}
       meta={[
@@ -19,7 +21,7 @@ const TemplateWrapper = ({ data, children }) => (
         { name: 'keywords', content: 'tattoo, art' }
       ]}
     />
-    <header
+    {/* <header
       role="banner"
       style={{
         position: 'absolute',
@@ -33,22 +35,25 @@ const TemplateWrapper = ({ data, children }) => (
         // borderBottom: '2px solid #0004',
         // padding: '0 1rem',
       }}
-    >
-      <div
+    > */}
+    <Header>
+      
+      <Nav>
+        {/* <div
         style={{
           display: 'flex',
           width: '1280px',
           justifyContent: 'space-between',          
         }}
-      >
-        <h1 style={{color: 'white', textShadow: '0 2px 0 rgba(0, 0, 0, 0.07)'}}>{data.site.siteMetadata.title}</h1>
-        <nav
+      > */}
+        {/* <h1 style={{color: 'white', textShadow: '0 2px 0 rgba(0, 0, 0, 0.07)'}}>{data.site.siteMetadata.title}</h1> */}
+        {/* <nav
           role="menu"
           style={{
             display: 'flex',
             alignItems: 'center'
           }}
-        >
+        > */}
           {/* Site Links */}
           <ul
             style={{
@@ -117,7 +122,7 @@ const TemplateWrapper = ({ data, children }) => (
               <Link to="/" style={{color: 'rgba(255,255,255,.8)'}}>Vietnamese</Link>
             </li>
           </ul>
-        </nav>
+        {/* </nav> */}
 
         {/* Mobile Menu Toggle */}
         <button
@@ -127,8 +132,9 @@ const TemplateWrapper = ({ data, children }) => (
         >
           Menu
         </button>
-      </div>
-    </header>
+      {/* </div> */}
+      </Nav>
+    </Header>
     <div
       style={{
         display: 'grid',
@@ -147,7 +153,8 @@ const TemplateWrapper = ({ data, children }) => (
     >
       &copy; 2018 Anna Hang Tattoo.
     </footer>
-  </div>
+  {/* </div> */}
+  </GridContainer>
 );
 
 TemplateWrapper.propTypes = {
