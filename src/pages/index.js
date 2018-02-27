@@ -13,7 +13,9 @@ import {
   SectionHeader,
   SectionContent,
   TagList,
-  TagListItem
+  TagListItem,
+  Gallery,
+  GalleryImage
 } from '../components';
 import logo from '../images/logo.svg';
 import map from '../images/map-dark.jpg';
@@ -125,87 +127,39 @@ const IndexPage = () => (
             'Female Tattoo',
             'Kanji',
             'Microblading Eyebrows'
-          ].map((tag, index) => <TagListItem id={btoa(tag)}>{tag}</TagListItem>)}
+          ].map((tag, index) => (
+            <TagListItem id={btoa(tag)}>{tag}</TagListItem>
+          ))}
         </TagList>
       </SectionContent>
     </Section>
-    <section
-      className="gallery"
-      style={{
-        display: 'grid'
-      }}
-    >
-      <h2 style={{ gridColumn: '1 / -1' }}>Gallery</h2>
-      <div
-        style={{
-          display: 'grid',
-          gridGap: '1rem',
-          gridAutoFlow: 'dense',
-          gridTemplateColumns: 'repeat(auto-fill, minmax(200px, 1fr))'
-        }}
-      >
-        <img
-          style={{ objectFit: 'cover', width: '100%', height: '100%' }}
-          src="https://source.unsplash.com/random/200x200/?tattoo"
-          alt=""
-        />
-        <img
-          style={{ objectFit: 'cover', width: '100%', height: '100%' }}
-          src="https://source.unsplash.com/random/202x202?tattoo"
-          alt=""
-        />
-        <img
-          style={{ objectFit: 'cover', width: '100%', height: '100%' }}
-          src="https://source.unsplash.com/random/203x203?tattoo"
-          alt=""
-        />
-        <img
-          style={{ objectFit: 'cover', width: '100%', height: '100%' }}
-          src="https://source.unsplash.com/random/204x204?tattoo"
-          alt=""
-        />
-        <img
-          style={{ objectFit: 'cover', width: '100%', height: '100%' }}
-          src="https://source.unsplash.com/random/205x205?tattoo"
-          alt=""
-        />
-        <img
-          style={{ objectFit: 'cover', width: '100%', height: '100%' }}
-          src="https://source.unsplash.com/random/206x206?tattoo"
-          alt=""
-        />
-        <img
-          style={{ objectFit: 'cover', width: '100%', height: '100%' }}
-          src="https://source.unsplash.com/random/207x207?tattoo"
-          alt=""
-        />
-        <img
-          style={{ objectFit: 'cover', width: '100%', height: '100%' }}
-          src="https://source.unsplash.com/random/207x208?tattoo"
-          alt=""
-        />
-        <img
-          style={{ objectFit: 'cover', width: '100%', height: '100%' }}
-          src="https://source.unsplash.com/random/207x209?tattoo"
-          alt=""
-        />
-        <img
-          style={{ objectFit: 'cover', width: '100%', height: '100%' }}
-          src="https://source.unsplash.com/random/207x210?tattoo"
-          alt=""
-        />
-        <img
-          style={{ objectFit: 'cover', width: '100%', height: '100%' }}
-          src="https://source.unsplash.com/random/207x215?tattoo"
-          alt=""
-        />
-        <img
-          style={{ objectFit: 'cover', width: '100%', height: '100%' }}
-          src="https://source.unsplash.com/random/207x216?tattoo"
-          alt=""
-        />
-      </div>
-    </section>
+    <Section id="gallery">
+      <SectionHeader>
+        <h2 style={{ gridColumn: '1 / -1' }}>Gallery</h2>
+      </SectionHeader>
+      <SectionContent>
+      <Gallery>
+        <GalleryImage colSpan={2} rowSpan={2} src="https://source.unsplash.com/random/200x201/?tattoo"/>
+        <GalleryImage src="https://source.unsplash.com/random/200x202/?tattoo"/>
+        <GalleryImage src="https://source.unsplash.com/random/200x203/?tattoo"/>
+        <GalleryImage src="https://source.unsplash.com/random/200x204/?tattoo"/>
+        <GalleryImage src="https://source.unsplash.com/random/200x205/?tattoo"/>
+        <GalleryImage src="https://source.unsplash.com/random/200x206/?tattoo"/>
+        <GalleryImage src="https://source.unsplash.com/random/200x207/?tattoo"/>
+        <GalleryImage src="https://source.unsplash.com/random/200x208/?tattoo"/>
+        <GalleryImage src="https://source.unsplash.com/random/200x209/?tattoo"/>
+        <GalleryImage src="https://source.unsplash.com/random/201x201/?tattoo"/>
+        <GalleryImage src="https://source.unsplash.com/random/201x202/?tattoo"/>
+        <GalleryImage src="https://source.unsplash.com/random/201x203/?tattoo"/>
+        <GalleryImage colSpan={2} rowSpan={2} src="https://source.unsplash.com/random/201x204/?tattoo"/>
+        <GalleryImage src="https://source.unsplash.com/random/201x205/?tattoo"/>
+        <GalleryImage src="https://source.unsplash.com/random/201x206/?tattoo"/>
+        <GalleryImage src="https://source.unsplash.com/random/201x207/?tattoo"/>
+        <GalleryImage src="https://source.unsplash.com/random/201x208/?tattoo"/>
+        <GalleryImage src="https://source.unsplash.com/random/201x209/?tattoo"/>
+      </Gallery>
+      </SectionContent>
+    </Section>
     <section
       style={
         {

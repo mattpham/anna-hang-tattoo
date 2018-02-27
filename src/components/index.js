@@ -13,6 +13,7 @@ import { Main } from './Main';
 import Hero from './Hero';
 import { Section, SectionHeader, SectionContent, SectionFooter } from './Section';
 import { TagList, TagListItem } from './TagList';
+import { Gallery, GalleryImage } from './Gallery';
 
 export {
   GridContainer,
@@ -31,5 +32,7 @@ export {
   SectionContent,
   SectionFooter,
   TagList,
-  TagListItem
+  TagListItem,
+  Gallery,
+  GalleryImage,
 };
