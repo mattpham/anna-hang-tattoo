@@ -7,7 +7,14 @@ import {
   faMapMarker
 } from '@fortawesome/fontawesome-free-solid/';
 
-import { Hero, Section, SectionHeader, SectionContent } from '../components';
+import {
+  Hero,
+  Section,
+  SectionHeader,
+  SectionContent,
+  TagList,
+  TagListItem
+} from '../components';
 import logo from '../images/logo.svg';
 import map from '../images/map-dark.jpg';
 
@@ -99,167 +106,27 @@ const IndexPage = () => (
         <h2>Specializing In</h2>
       </SectionHeader>
       <SectionContent>
-        <ul
-          style={{
-            display: 'flex',
-            flexFlow: 'row wrap',
-            listStyle: 'none'
-          }}
-        >
-          <li
-            style={{
-              padding: '.5rem 1rem',
-              marginRight: '1rem',
-              border: '1px solid grey'
-            }}
-          >
-            Permanent Makeup
-          </li>
-          <li
-            style={{
-              padding: '.5rem 1rem',
-              marginRight: '1rem',
-              border: '1px solid grey'
-            }}
-          >
-            Half Sleeve
-          </li>
-          <li
-            style={{
-              padding: '.5rem 1rem',
-              marginRight: '1rem',
-              border: '1px solid grey'
-            }}
-          >
-            Koifish
-          </li>
-          <li
-            style={{
-              padding: '.5rem 1rem',
-              marginRight: '1rem',
-              border: '1px solid grey'
-            }}
-          >
-            Cover Up
-          </li>
-          <li
-            style={{
-              padding: '.5rem 1rem',
-              marginRight: '1rem',
-              border: '1px solid grey'
-            }}
-          >
-            3D Art
-          </li>
-          <li
-            style={{
-              padding: '.5rem 1rem',
-              marginRight: '1rem',
-              border: '1px solid grey'
-            }}
-          >
-            Full Sleeve, Chest, and Arms
-          </li>
-          <li
-            style={{
-              padding: '.5rem 1rem',
-              marginRight: '1rem',
-              border: '1px solid grey'
-            }}
-          >
-            Dragon
-          </li>
-          <li
-            style={{
-              padding: '.5rem 1rem',
-              marginRight: '1rem',
-              border: '1px solid grey'
-            }}
-          >
-            Full Back
-          </li>
-          <li
-            style={{
-              padding: '.5rem 1rem',
-              marginRight: '1rem',
-              border: '1px solid grey'
-            }}
-          >
-            Geisha
-          </li>
-          <li
-            style={{
-              padding: '.5rem 1rem',
-              marginRight: '1rem',
-              border: '1px solid grey'
-            }}
-          >
-            Religion
-          </li>
-          <li
-            style={{
-              padding: '.5rem 1rem',
-              marginRight: '1rem',
-              border: '1px solid grey'
-            }}
-          >
-            Phoenix
-          </li>
-          <li
-            style={{
-              padding: '.5rem 1rem',
-              marginRight: '1rem',
-              border: '1px solid grey'
-            }}
-          >
-            Samurai
-          </li>
-          <li
-            style={{
-              padding: '.5rem 1rem',
-              marginRight: '1rem',
-              border: '1px solid grey'
-            }}
-          >
-            Tiger
-          </li>
-          <li
-            style={{
-              padding: '.5rem 1rem',
-              marginRight: '1rem',
-              border: '1px solid grey'
-            }}
-          >
-            Tribal
-          </li>
-          <li
-            style={{
-              padding: '.5rem 1rem',
-              marginRight: '1rem',
-              border: '1px solid grey'
-            }}
-          >
-            Female Tattoo
-          </li>
-          <li
-            style={{
-              padding: '.5rem 1rem',
-              marginRight: '1rem',
-              border: '1px solid grey'
-            }}
-          >
-            Kanji
-          </li>
-          <li
-            style={{
-              padding: '.5rem 1rem',
-              marginRight: '1rem',
-              border: '1px solid grey'
-            }}
-          >
-            Microblading Eyebrows
-          </li>
-        </ul>
+        <TagList>
+          {[
+            'Permanent Makeup',
+            'Half Sleeve',
+            'Koifish',
+            'Cover Up',
+            '3D Art',
+            'Full Sleeve, Chest, and Arms',
+            'Dragon',
+            'Full Back',
+            'Geisha',
+            'Religion',
+            'Phoenix',
+            'Samurai',
+            'Tiger',
+            'Tribal',
+            'Female Tattoo',
+            'Kanji',
+            'Microblading Eyebrows'
+          ].map((tag, index) => <TagListItem id={btoa(tag)}>{tag}</TagListItem>)}
+        </TagList>
       </SectionContent>
     </Section>
     <section
