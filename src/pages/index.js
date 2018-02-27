@@ -138,71 +138,85 @@ const IndexPage = () => (
         <h2 style={{ gridColumn: '1 / -1' }}>Gallery</h2>
       </SectionHeader>
       <SectionContent>
-      <Gallery>
-        <GalleryImage colSpan={2} rowSpan={2} src="https://source.unsplash.com/random/200x201/?tattoo"/>
-        <GalleryImage src="https://source.unsplash.com/random/200x202/?tattoo"/>
-        <GalleryImage src="https://source.unsplash.com/random/200x203/?tattoo"/>
-        <GalleryImage src="https://source.unsplash.com/random/200x204/?tattoo"/>
-        <GalleryImage src="https://source.unsplash.com/random/200x205/?tattoo"/>
-        <GalleryImage src="https://source.unsplash.com/random/200x206/?tattoo"/>
-        <GalleryImage src="https://source.unsplash.com/random/200x207/?tattoo"/>
-        <GalleryImage src="https://source.unsplash.com/random/200x208/?tattoo"/>
-        <GalleryImage src="https://source.unsplash.com/random/200x209/?tattoo"/>
-        <GalleryImage src="https://source.unsplash.com/random/201x201/?tattoo"/>
-        <GalleryImage src="https://source.unsplash.com/random/201x202/?tattoo"/>
-        <GalleryImage src="https://source.unsplash.com/random/201x203/?tattoo"/>
-        <GalleryImage colSpan={2} rowSpan={2} src="https://source.unsplash.com/random/201x204/?tattoo"/>
-        <GalleryImage src="https://source.unsplash.com/random/201x205/?tattoo"/>
-        <GalleryImage src="https://source.unsplash.com/random/201x206/?tattoo"/>
-        <GalleryImage src="https://source.unsplash.com/random/201x207/?tattoo"/>
-        <GalleryImage src="https://source.unsplash.com/random/201x208/?tattoo"/>
-        <GalleryImage src="https://source.unsplash.com/random/201x209/?tattoo"/>
-      </Gallery>
+        <Gallery>
+          <GalleryImage
+            colSpan={2}
+            rowSpan={2}
+            src="https://source.unsplash.com/random/200x201/?tattoo"
+          />
+          <GalleryImage src="https://source.unsplash.com/random/200x202/?tattoo" />
+          <GalleryImage src="https://source.unsplash.com/random/200x203/?tattoo" />
+          <GalleryImage src="https://source.unsplash.com/random/200x204/?tattoo" />
+          <GalleryImage src="https://source.unsplash.com/random/200x205/?tattoo" />
+          <GalleryImage src="https://source.unsplash.com/random/200x206/?tattoo" />
+          <GalleryImage src="https://source.unsplash.com/random/200x207/?tattoo" />
+          <GalleryImage src="https://source.unsplash.com/random/200x208/?tattoo" />
+          <GalleryImage src="https://source.unsplash.com/random/200x209/?tattoo" />
+          <GalleryImage src="https://source.unsplash.com/random/201x201/?tattoo" />
+          <GalleryImage src="https://source.unsplash.com/random/201x202/?tattoo" />
+          <GalleryImage src="https://source.unsplash.com/random/201x203/?tattoo" />
+          <GalleryImage
+            colSpan={2}
+            rowSpan={2}
+            src="https://source.unsplash.com/random/201x204/?tattoo"
+          />
+          <GalleryImage src="https://source.unsplash.com/random/201x205/?tattoo" />
+          <GalleryImage src="https://source.unsplash.com/random/201x206/?tattoo" />
+          <GalleryImage src="https://source.unsplash.com/random/201x207/?tattoo" />
+          <GalleryImage src="https://source.unsplash.com/random/201x208/?tattoo" />
+          <GalleryImage src="https://source.unsplash.com/random/201x209/?tattoo" />
+        </Gallery>
       </SectionContent>
     </Section>
-    <section
-      style={
-        {
-          // backgroundColor: 'darkgrey',
-        }
-      }
-    >
-      <h2>Send a Message</h2>
-      <form
-        style={{
-          display: 'grid',
-          gridGap: '1rem',
-          justifyItems: 'center'
-        }}
-      >
-        <input type="text" name="Name" placeholder="Name" />
-        <input type="email" name="Email" placeholder="Email" />
-        <input type="tel" name="Phone Number" placeholder="Phone Number" />
-        <input type="file" name="File" />
-        <input type="text" name="Subject" placeholder="Subject" />
-        <textarea name="Message" placeholder="Message" />
-        <button type="submit">Send</button>
-      </form>
-    </section>
-    <section style={{}}>
-      <h2>Contact</h2>
-      <div className="contact-phone">
-        <FontAwesomeIcon icon="phone" />
-        <span> (714) 299-3387</span>
-      </div>
-      <div className="contact-email">
-        <FontAwesomeIcon icon="envelope" />
-        <span> info@annahangtattoovn.com</span>
-      </div>
-    </section>
-    <section style={{}}>
-      <h2>Address</h2>
-      <div className="contact-address">
-        <FontAwesomeIcon icon={faMapMarker} /> 13071 Brookhurst St., #225 Garden
-        Grove, California
-      </div>
-    </section>
-    <section style={{}}>
+    <Section id="contact-form">
+      <SectionHeader>
+        <h2>Send a Message</h2>
+      </SectionHeader>
+      <SectionContent>
+        <form
+          style={{
+            display: 'grid',
+            gridGap: '1rem',
+            justifyItems: 'center'
+          }}
+        >
+          <input type="text" name="Name" placeholder="Name" />
+          <input type="email" name="Email" placeholder="Email" />
+          <input type="tel" name="Phone Number" placeholder="Phone Number" />
+          <input type="file" name="File" />
+          <input type="text" name="Subject" placeholder="Subject" />
+          <textarea name="Message" placeholder="Message" />
+          <button type="submit">Send</button>
+        </form>
+      </SectionContent>
+    </Section>
+    <Section id="contact-info">
+      <SectionHeader>
+        <h2>Contact</h2>
+      </SectionHeader>
+      <SectionContent flow="row">
+        <div className="contact-phone">
+          <FontAwesomeIcon icon="phone" />
+          <span> (714) 299-3387</span>
+        </div>
+        <div className="contact-email">
+          <FontAwesomeIcon icon="envelope" />
+          <span> info@annahangtattoovn.com</span>
+        </div>
+      </SectionContent>
+    </Section>
+    <Section id="address">
+      <SectionHeader>
+        <h2>Address</h2>
+      </SectionHeader>
+      <SectionContent>
+        <div className="contact-address">
+          <FontAwesomeIcon icon={faMapMarker} /> 13071 Brookhurst St., #225
+          Garden Grove, California
+        </div>
+      </SectionContent>
+    </Section>
+    <Section id="map">
       <img
         style={{
           margin: 0,
@@ -212,7 +226,7 @@ const IndexPage = () => (
         }}
         src={map}
       />
-    </section>
+    </Section>
     {/* </main> */}
   </React.Fragment>
 );

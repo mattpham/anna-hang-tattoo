@@ -27,7 +27,7 @@ const SectionContent = styled.div`
   align-items: stretch;
 
   @media (min-width: 600px) {
-    grid-auto-flow: column;
+    grid-auto-flow: ${props => props.flow ? props.flow : 'column'};
   }
 `;
 
