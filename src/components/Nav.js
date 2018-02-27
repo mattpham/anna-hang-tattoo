@@ -13,9 +13,6 @@ const Nav = styled.nav`
   justify-items: center;
   align-content: start;
 
-  @media (max-width: 600px) {
-    bottom: 0;
-  }
   @media (min-width: 600px) {
     grid-auto-flow: column;
     justify-content: end;
