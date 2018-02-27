@@ -11,6 +11,8 @@ import {
 import { ToggleNav } from './ToggleNav';
 import { Main } from './Main';
 import Hero from './Hero';
+import { Section, SectionHeader, SectionContent, SectionFooter } from './Section';
+import { TagList, TagListItem } from './TagList';
 
 export {
   GridContainer,
@@ -23,5 +25,11 @@ export {
   NavButton,
   ToggleNav,
   Main,
-  Hero
+  Hero,
+  Section,
+  SectionHeader,
+  SectionContent,
+  SectionFooter,
+  TagList,
+  TagListItem
 };

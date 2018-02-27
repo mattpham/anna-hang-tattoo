@@ -1,30 +1,38 @@
 import React from 'react';
 import Link from 'gatsby-link';
 import FontAwesomeIcon from '@fortawesome/react-fontawesome';
-import { faPhone, faEnvelope, faMapMarker } from '@fortawesome/fontawesome-free-solid/';
+import {
+  faPhone,
+  faEnvelope,
+  faMapMarker
+} from '@fortawesome/fontawesome-free-solid/';
 
-import { Hero } from '../components';
+import { Hero, Section, SectionHeader, SectionContent } from '../components';
 import logo from '../images/logo.svg';
 import map from '../images/map-dark.jpg';
 
 const IndexPage = () => (
   <React.Fragment>
     <Hero>
-        <img
-          src={logo}
-          alt="logo"
-          style={{
-            width: '175px',
-            margin: 0
-          }}
-        />
-        <h2
-          style={{ color: 'white', textShadow: '0 2px 0 rgba(0, 0, 0, 0.07)', margin: 0 }}
-        >
-          What are you looking for?
-        </h2>
+      <img
+        src={logo}
+        alt="logo"
+        style={{
+          width: '175px',
+          margin: 0
+        }}
+      />
+      <h2
+        style={{
+          color: 'white',
+          textShadow: '0 2px 0 rgba(0, 0, 0, 0.07)',
+          margin: 0
+        }}
+      >
+        What are you looking for?
+      </h2>
     </Hero>
-    
+
     {/* <main
       style={{
         display: 'grid',
@@ -33,24 +41,18 @@ const IndexPage = () => (
         gridGap: '2rem'
       }}
     > */}
-      <section
-        className="about"
-        style={{
-          background: 'white',
-          maxWidth: '960px',
-          display: 'grid',
-          gridGap: '0 2rem',
-          justifyContent: 'center',
-        }}
-      >
-        <h2 style={{ gridColumn: '1 / -1' }}>Meet the Artist</h2>
+    <Section id="about">
+      <SectionHeader>
+        <h2>Meet the Artist</h2>
+      </SectionHeader>
+      <SectionContent>
         <img
           src="https://source.unsplash.com/random/?portrait+person"
           alt="Biography Photo"
           className="about__image"
           style={{
             objectFit: 'cover',
-            alignSelf: 'stretch',
+            width: '100%',
             margin: 0
           }}
         />
@@ -90,13 +92,13 @@ const IndexPage = () => (
             travel to work with her.
           </p>
         </div>
-      </section>
-      <section
-        className="specialties"
-        style={{
-        }}
-      >
+      </SectionContent>
+    </Section>
+    <Section id="specialties">
+      <SectionHeader>
         <h2>Specializing In</h2>
+      </SectionHeader>
+      <SectionContent>
         <ul
           style={{
             display: 'flex',
@@ -258,128 +260,138 @@ const IndexPage = () => (
             Microblading Eyebrows
           </li>
         </ul>
-      </section>
-      <section
-        className="gallery"
+      </SectionContent>
+    </Section>
+    <section
+      className="gallery"
+      style={{
+        display: 'grid'
+      }}
+    >
+      <h2 style={{ gridColumn: '1 / -1' }}>Gallery</h2>
+      <div
         style={{
-          display: 'grid',
-        }}
-      >
-        <h2 style={{ gridColumn: '1 / -1' }}>Gallery</h2>
-        <div
-          style={{
-            display: 'grid',
-            gridGap: '1rem',
-            gridAutoFlow: 'dense',
-            gridTemplateColumns: 'repeat(auto-fill, minmax(200px, 1fr))'
-          }}
-        >
-          <img
-            style={{ objectFit: 'cover', width: '100%', height: '100%' }}
-            src="https://source.unsplash.com/random/200x200/?tattoo"
-            alt=""
-          />
-          <img
-            style={{ objectFit: 'cover', width: '100%', height: '100%' }}
-            src="https://source.unsplash.com/random/202x202?tattoo"
-            alt=""
-          />
-          <img
-            style={{ objectFit: 'cover', width: '100%', height: '100%' }}
-            src="https://source.unsplash.com/random/203x203?tattoo"
-            alt=""
-          />
-          <img
-            style={{ objectFit: 'cover', width: '100%', height: '100%' }}
-            src="https://source.unsplash.com/random/204x204?tattoo"
-            alt=""
-          />
-          <img
-            style={{ objectFit: 'cover', width: '100%', height: '100%' }}
-            src="https://source.unsplash.com/random/205x205?tattoo"
-            alt=""
-          />
-          <img
-            style={{ objectFit: 'cover', width: '100%', height: '100%' }}
-            src="https://source.unsplash.com/random/206x206?tattoo"
-            alt=""
-          />
-          <img
-            style={{ objectFit: 'cover', width: '100%', height: '100%' }}
-            src="https://source.unsplash.com/random/207x207?tattoo"
-            alt=""
-          />
-          <img
-            style={{ objectFit: 'cover', width: '100%', height: '100%' }}
-            src="https://source.unsplash.com/random/207x208?tattoo"
-            alt=""
-          />
-          <img
-            style={{ objectFit: 'cover', width: '100%', height: '100%' }}
-            src="https://source.unsplash.com/random/207x209?tattoo"
-            alt=""
-          />
-          <img
-            style={{ objectFit: 'cover', width: '100%', height: '100%' }}
-            src="https://source.unsplash.com/random/207x210?tattoo"
-            alt=""
-          />
-          <img
-            style={{ objectFit: 'cover', width: '100%', height: '100%' }}
-            src="https://source.unsplash.com/random/207x215?tattoo"
-            alt=""
-          />
-          <img
-            style={{ objectFit: 'cover', width: '100%', height: '100%' }}
-            src="https://source.unsplash.com/random/207x216?tattoo"
-            alt=""
-          />
-        </div>
-      </section>
-      <section
-        style={{
-          // backgroundColor: 'darkgrey',
-        }}
-      >
-        <h2>Send a Message</h2>
-        <form style={{
-          
           display: 'grid',
           gridGap: '1rem',
-          justifyItems: 'center',
-          
-        }}>
-          <input type="text" name="Name" placeholder="Name" />
-          <input type="email" name="Email" placeholder="Email" />
-          <input type="tel" name="Phone Number" placeholder="Phone Number" />
-          <input type="file" name="File" />
-          <input type="text" name="Subject" placeholder="Subject" />
-          <textarea name="Message" placeholder="Message" />
-          <button type="submit">Send</button>
-        </form>
-      </section>
-      <section
-        style={{
+          gridAutoFlow: 'dense',
+          gridTemplateColumns: 'repeat(auto-fill, minmax(200px, 1fr))'
         }}
       >
-        <h2>Contact</h2>
-        <div className="contact-phone"><FontAwesomeIcon icon="phone" />
-<span> (714) 299-3387</span></div>
-        <div className="contact-email"><FontAwesomeIcon icon="envelope" /><span> info@annahangtattoovn.com</span></div>
-      </section>
-      <section
+        <img
+          style={{ objectFit: 'cover', width: '100%', height: '100%' }}
+          src="https://source.unsplash.com/random/200x200/?tattoo"
+          alt=""
+        />
+        <img
+          style={{ objectFit: 'cover', width: '100%', height: '100%' }}
+          src="https://source.unsplash.com/random/202x202?tattoo"
+          alt=""
+        />
+        <img
+          style={{ objectFit: 'cover', width: '100%', height: '100%' }}
+          src="https://source.unsplash.com/random/203x203?tattoo"
+          alt=""
+        />
+        <img
+          style={{ objectFit: 'cover', width: '100%', height: '100%' }}
+          src="https://source.unsplash.com/random/204x204?tattoo"
+          alt=""
+        />
+        <img
+          style={{ objectFit: 'cover', width: '100%', height: '100%' }}
+          src="https://source.unsplash.com/random/205x205?tattoo"
+          alt=""
+        />
+        <img
+          style={{ objectFit: 'cover', width: '100%', height: '100%' }}
+          src="https://source.unsplash.com/random/206x206?tattoo"
+          alt=""
+        />
+        <img
+          style={{ objectFit: 'cover', width: '100%', height: '100%' }}
+          src="https://source.unsplash.com/random/207x207?tattoo"
+          alt=""
+        />
+        <img
+          style={{ objectFit: 'cover', width: '100%', height: '100%' }}
+          src="https://source.unsplash.com/random/207x208?tattoo"
+          alt=""
+        />
+        <img
+          style={{ objectFit: 'cover', width: '100%', height: '100%' }}
+          src="https://source.unsplash.com/random/207x209?tattoo"
+          alt=""
+        />
+        <img
+          style={{ objectFit: 'cover', width: '100%', height: '100%' }}
+          src="https://source.unsplash.com/random/207x210?tattoo"
+          alt=""
+        />
+        <img
+          style={{ objectFit: 'cover', width: '100%', height: '100%' }}
+          src="https://source.unsplash.com/random/207x215?tattoo"
+          alt=""
+        />
+        <img
+          style={{ objectFit: 'cover', width: '100%', height: '100%' }}
+          src="https://source.unsplash.com/random/207x216?tattoo"
+          alt=""
+        />
+      </div>
+    </section>
+    <section
+      style={
+        {
+          // backgroundColor: 'darkgrey',
+        }
+      }
+    >
+      <h2>Send a Message</h2>
+      <form
         style={{
+          display: 'grid',
+          gridGap: '1rem',
+          justifyItems: 'center'
         }}
       >
-        <h2>Address</h2>
-        <div className="contact-address"><FontAwesomeIcon icon={faMapMarker} /> 13071 Brookhurst St., #225 Garden Grove, California</div>
-      </section>
-      <section
+        <input type="text" name="Name" placeholder="Name" />
+        <input type="email" name="Email" placeholder="Email" />
+        <input type="tel" name="Phone Number" placeholder="Phone Number" />
+        <input type="file" name="File" />
+        <input type="text" name="Subject" placeholder="Subject" />
+        <textarea name="Message" placeholder="Message" />
+        <button type="submit">Send</button>
+      </form>
+    </section>
+    <section style={{}}>
+      <h2>Contact</h2>
+      <div className="contact-phone">
+        <FontAwesomeIcon icon="phone" />
+        <span> (714) 299-3387</span>
+      </div>
+      <div className="contact-email">
+        <FontAwesomeIcon icon="envelope" />
+        <span> info@annahangtattoovn.com</span>
+      </div>
+    </section>
+    <section style={{}}>
+      <h2>Address</h2>
+      <div className="contact-address">
+        <FontAwesomeIcon icon={faMapMarker} /> 13071 Brookhurst St., #225 Garden
+        Grove, California
+      </div>
+    </section>
+    <section style={{}}>
+      <img
         style={{
+          margin: 0,
+          objectFit: 'cover',
+          height: '300px',
+          width: '100%'
         }}
-      >
-        <img style={{margin: 0, objectFit: 'cover', height:'300px', width: '100%'}} src={map} />
-      </section>
+        src={map}
+      />
+    </section>
     {/* </main> */}
   </React.Fragment>
 );
