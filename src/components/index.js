@@ -9,6 +9,8 @@ import {
   NavButton,
 } from './Nav';
 import { ToggleNav } from './ToggleNav';
+import { Main } from './Main';
+import Hero from './Hero';
 
 export {
   GridContainer,
@@ -19,5 +21,7 @@ export {
   NavListItem,
   NavLink,
   NavButton,
-  ToggleNav
+  ToggleNav,
+  Main,
+  Hero
 };

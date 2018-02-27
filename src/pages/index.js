@@ -3,53 +3,36 @@ import Link from 'gatsby-link';
 import FontAwesomeIcon from '@fortawesome/react-fontawesome';
 import { faPhone, faEnvelope, faMapMarker } from '@fortawesome/fontawesome-free-solid/';
 
+import { Hero } from '../components';
 import logo from '../images/logo.svg';
 import map from '../images/map-dark.jpg';
 
 const IndexPage = () => (
   <React.Fragment>
-    {/* Hero */}
-    <div
-      style={{
-        display: 'grid',
-        justifyItems: 'center',
-        backgroundBlendMode: 'multiply,multiply',
-        backgroundImage:
-          'linear-gradient(to bottom, rgba(255,255,255,0.15) 0%, rgba(0,0,0,0.15) 100%), radial-gradient(at top center, rgba(90, 0,1,0.8) 0%, rgba(34,24,28,1) 120%), url("https://source.unsplash.com/random/?tattoo")',
-        backgroundSize: 'cover',
-        backgroundPosition: 'center',
-        backgroundAttachment: 'fixed'
-      }}
-    >
-      <div
-        style={{
-          marginTop: '3rem',
-          padding: '3rem',
-          textAlign: 'center'
-        }}
-      >
+    <Hero>
         <img
           src={logo}
           alt="logo"
           style={{
-            width: '250px'
+            width: '175px',
+            margin: 0
           }}
         />
-        <p
-          style={{ color: 'white', textShadow: '0 2px 0 rgba(0, 0, 0, 0.07)' }}
+        <h2
+          style={{ color: 'white', textShadow: '0 2px 0 rgba(0, 0, 0, 0.07)', margin: 0 }}
         >
           What are you looking for?
-        </p>
-      </div>
-    </div>
-    <main
+        </h2>
+    </Hero>
+    
+    {/* <main
       style={{
         display: 'grid',
         gridTemplateColumns: '1fr 960px 1fr',
         gridTemplateAreas: "'s1 main s2'",
         gridGap: '2rem'
       }}
-    >
+    > */}
       <section
         className="about"
         style={{
@@ -58,8 +41,6 @@ const IndexPage = () => (
           display: 'grid',
           gridGap: '0 2rem',
           justifyContent: 'center',
-          gridColumn: 'main',
-          gridTemplateColumns: '1fr 2fr'
         }}
       >
         <h2 style={{ gridColumn: '1 / -1' }}>Meet the Artist</h2>
@@ -113,7 +94,6 @@ const IndexPage = () => (
       <section
         className="specialties"
         style={{
-          gridColumn: 'main'
         }}
       >
         <h2>Specializing In</h2>
@@ -283,7 +263,6 @@ const IndexPage = () => (
         className="gallery"
         style={{
           display: 'grid',
-          gridColumn: 'main'
         }}
       >
         <h2 style={{ gridColumn: '1 / -1' }}>Gallery</h2>
@@ -360,7 +339,6 @@ const IndexPage = () => (
       <section
         style={{
           // backgroundColor: 'darkgrey',
-          gridColumn: 'main'
         }}
       >
         <h2>Send a Message</h2>
@@ -382,7 +360,6 @@ const IndexPage = () => (
       </section>
       <section
         style={{
-          gridColumn: 'main'
         }}
       >
         <h2>Contact</h2>
@@ -392,7 +369,6 @@ const IndexPage = () => (
       </section>
       <section
         style={{
-          gridColumn: 'main'
         }}
       >
         <h2>Address</h2>
@@ -400,12 +376,11 @@ const IndexPage = () => (
       </section>
       <section
         style={{
-          gridColumn: '1 / -1'
         }}
       >
         <img style={{margin: 0, objectFit: 'cover', height:'300px', width: '100%'}} src={map} />
       </section>
-    </main>
+    {/* </main> */}
   </React.Fragment>
 );
 

@@ -18,7 +18,8 @@ import {
   NavListItem,
   NavLink,
   NavButton,
-  ToggleNav
+  ToggleNav,
+  Main
 } from '../components';
 
 const ResponsiveMenu = props => (
@@ -116,16 +117,9 @@ const TemplateWrapper = ({ data, children }) => (
       </ResponsiveMenu>
       {/* </Nav> */}
     {/* </Header> */}
-    <div
-      style={{
-        display: 'grid',
-        justifyContent: 'stretch',
-        gridGap: '2rem',
-        gridColumnStart: 1
-      }}
-    >
+    <Main>
       {children()}
-    </div>
+    </Main>
     <footer
       style={{
         display: 'grid',
