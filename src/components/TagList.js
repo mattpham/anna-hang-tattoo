@@ -9,14 +9,15 @@ const TagList = styled.ul`
 
 const TagListItem = styled.li`
   margin-right: 1rem;
-  border: 1px solid grey;
+  border: 3px solid #6f533a;
   padding: 0.5em;
-  color: rgba(0, 0, 0, 0.6);
+  color: #6f533a;
   transition: all 0.1s ease-in;
   &:hover {
     text-decoration: none;
-    color: rgba(0, 0, 0, 1);
-    background: rgba(139, 0, 0, 1);
+    color: #fbfbfb;
+    background: #806b48;
+    border-color: #806b48;
   }
 `;
 
