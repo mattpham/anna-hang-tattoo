@@ -14,6 +14,7 @@ import Hero from './Hero';
 import { Section, SectionHeader, SectionContent, SectionFooter } from './Section';
 import { TagList, TagListItem } from './TagList';
 import { Gallery, GalleryImage } from './Gallery';
+import Footer from './Footer';
 
 export {
   GridContainer,
@@ -35,4 +36,5 @@ export {
   TagListItem,
   Gallery,
   GalleryImage,
+  Footer
 };

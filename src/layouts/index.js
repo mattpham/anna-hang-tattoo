@@ -19,7 +19,8 @@ import {
   NavLink,
   NavButton,
   ToggleNav,
-  Main
+  Main,
+  Footer
 } from '../components';
 
 const ResponsiveMenu = props => (
@@ -60,48 +61,48 @@ const TemplateWrapper = ({ data, children }) => (
       }}
     > */}
     {/* <Header> */}
-      <ResponsiveMenu>
-        {/* <Nav flow="column"> */}
-        {/* Site Links */}
-        {/* <NavButton>Menu</NavButton> */}
-        <NavList>
-          <NavListItem>
-            <NavLink>Home</NavLink>
-          </NavListItem>
-          <NavListItem>
-            <NavLink>About</NavLink>
-          </NavListItem>
-          <NavListItem>
-            <NavLink>Services</NavLink>
-          </NavListItem>
-          <NavListItem>
-            <NavLink>Gallery</NavLink>
-          </NavListItem>
-          <NavListItem>
-            <NavLink>Contact</NavLink>
-          </NavListItem>
-        </NavList>
+    <ResponsiveMenu>
+      {/* <Nav flow="column"> */}
+      {/* Site Links */}
+      {/* <NavButton>Menu</NavButton> */}
+      <NavList>
+        <NavListItem>
+          <NavLink>Home</NavLink>
+        </NavListItem>
+        <NavListItem>
+          <NavLink>About</NavLink>
+        </NavListItem>
+        <NavListItem>
+          <NavLink>Services</NavLink>
+        </NavListItem>
+        <NavListItem>
+          <NavLink>Gallery</NavLink>
+        </NavListItem>
+        <NavListItem>
+          <NavLink>Contact</NavLink>
+        </NavListItem>
+      </NavList>
 
-        {/* Social Links */}
-        <NavList flow='column'>
-          <NavListItem>
-            <NavLink>
-              <FontAwesomeIcon icon={faInstagram} />
-            </NavLink>
-          </NavListItem>
-          <NavListItem>
-            <NavLink>
-              <FontAwesomeIcon icon={faFacebook} />
-            </NavLink>
-          </NavListItem>
-          <NavListItem>
-            <NavLink>
-              <FontAwesomeIcon icon={faFlickr} />
-            </NavLink>
-          </NavListItem>
-        </NavList>
+      {/* Social Links */}
+      <NavList flow="column">
+        <NavListItem>
+          <NavLink>
+            <FontAwesomeIcon icon={faInstagram} />
+          </NavLink>
+        </NavListItem>
+        <NavListItem>
+          <NavLink>
+            <FontAwesomeIcon icon={faFacebook} />
+          </NavLink>
+        </NavListItem>
+        <NavListItem>
+          <NavLink>
+            <FontAwesomeIcon icon={faFlickr} />
+          </NavLink>
+        </NavListItem>
+      </NavList>
 
-        {/* Language Links
+      {/* Language Links
           <NavList>
             <NavListItem>
               <Link to="/" style={{color: 'rgba(255,255,255,.8)'}}>English</Link>
@@ -111,24 +112,14 @@ const TemplateWrapper = ({ data, children }) => (
             </NavListItem>
           </NavList> */}
 
-        {/* Mobile Menu Toggle */}
+      {/* Mobile Menu Toggle */}
 
-        {/* </div> */}
-      </ResponsiveMenu>
-      {/* </Nav> */}
+      {/* </div> */}
+    </ResponsiveMenu>
+    {/* </Nav> */}
     {/* </Header> */}
-    <Main>
-      {children()}
-    </Main>
-    <footer
-      style={{
-        display: 'grid',
-        justifyContent: 'center',
-        backgroundColor: '#0002'
-      }}
-    >
-      &copy; 2018 Anna Hang Tattoo.
-    </footer>
+    <Main>{children()}</Main>
+    <Footer>&copy;2018 Anna Hang Tattoo.</Footer>
     {/* </div> */}
   </GridContainer>
 );
@@ -136,8 +127,6 @@ const TemplateWrapper = ({ data, children }) => (
 TemplateWrapper.propTypes = {
   children: PropTypes.func
 };
-
-
 
 export const query = graphql`
   query LayoutQuery {
