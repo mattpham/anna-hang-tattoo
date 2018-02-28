@@ -128,7 +128,7 @@ const IndexPage = () => (
             'Kanji',
             'Microblading Eyebrows'
           ].map((tag, index) => (
-            <TagListItem id={btoa(tag)}>{tag}</TagListItem>
+            <TagListItem id={index}>{tag}</TagListItem>
           ))}
         </TagList>
       </SectionContent>
