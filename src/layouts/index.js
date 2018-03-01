@@ -68,36 +68,36 @@ const TemplateWrapper = ({ data, children }) => (
       {/* <NavButton>Menu</NavButton> */}
       <NavList>
         <NavListItem>
-          <NavLink>Home</NavLink>
+          <NavLink to="/">Home</NavLink>
         </NavListItem>
         <NavListItem>
-          <NavLink>About</NavLink>
+          <NavLink to="#about">About</NavLink>
         </NavListItem>
         <NavListItem>
-          <NavLink>Services</NavLink>
+          <NavLink to="#specialties">Services</NavLink>
         </NavListItem>
         <NavListItem>
-          <NavLink>Gallery</NavLink>
+          <NavLink to="#gallery">Gallery</NavLink>
         </NavListItem>
         <NavListItem>
-          <NavLink>Contact</NavLink>
+          <NavLink to="#contact-form">Contact</NavLink>
         </NavListItem>
       </NavList>
 
       {/* Social Links */}
       <NavList flow="column">
         <NavListItem>
-          <NavLink>
+          <NavLink to="/">
             <FontAwesomeIcon icon={faInstagram} />
           </NavLink>
         </NavListItem>
         <NavListItem>
-          <NavLink>
+          <NavLink to="/">
             <FontAwesomeIcon icon={faFacebook} />
           </NavLink>
         </NavListItem>
         <NavListItem>
-          <NavLink>
+          <NavLink to="/">
             <FontAwesomeIcon icon={faFlickr} />
           </NavLink>
         </NavListItem>
