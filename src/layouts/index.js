@@ -4,6 +4,7 @@ import Link from 'gatsby-link';
 import Helmet from 'react-helmet';
 import Responsive from 'react-responsive';
 import FontAwesomeIcon from '@fortawesome/react-fontawesome';
+import 'normalize.css';
 import {
   faInstagram,
   faFlickr,

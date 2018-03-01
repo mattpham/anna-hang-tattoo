@@ -15,7 +15,8 @@ import {
   TagList,
   TagListItem,
   Gallery,
-  GalleryImage
+  GalleryImage,
+  GalleryItem
 } from '../components';
 import logo from '../images/logo.svg';
 import map from '../images/map-dark.jpg';
@@ -127,9 +128,7 @@ const IndexPage = () => (
             'Female Tattoo',
             'Kanji',
             'Microblading Eyebrows'
-          ].map((tag, index) => (
-            <TagListItem id={index}>{tag}</TagListItem>
-          ))}
+          ].map((tag, index) => <TagListItem key={index}>{tag}</TagListItem>)}
         </TagList>
       </SectionContent>
     </Section>
@@ -139,32 +138,60 @@ const IndexPage = () => (
       </SectionHeader>
       <SectionContent>
         <Gallery>
-          <GalleryImage
-            colSpan={2}
-            rowSpan={2}
-            src="https://source.unsplash.com/random/200x201/?tattoo"
-          />
-          <GalleryImage src="https://source.unsplash.com/random/200x202/?tattoo" />
-          <GalleryImage src="https://source.unsplash.com/random/200x203/?tattoo" />
-          <GalleryImage src="https://source.unsplash.com/random/200x204/?tattoo" />
-          <GalleryImage src="https://source.unsplash.com/random/200x205/?tattoo" />
-          <GalleryImage src="https://source.unsplash.com/random/200x206/?tattoo" />
-          <GalleryImage src="https://source.unsplash.com/random/200x207/?tattoo" />
-          <GalleryImage src="https://source.unsplash.com/random/200x208/?tattoo" />
-          <GalleryImage src="https://source.unsplash.com/random/200x209/?tattoo" />
-          <GalleryImage src="https://source.unsplash.com/random/201x201/?tattoo" />
-          <GalleryImage src="https://source.unsplash.com/random/201x202/?tattoo" />
-          <GalleryImage src="https://source.unsplash.com/random/201x203/?tattoo" />
-          <GalleryImage
-            colSpan={2}
-            rowSpan={2}
-            src="https://source.unsplash.com/random/201x204/?tattoo"
-          />
-          <GalleryImage src="https://source.unsplash.com/random/201x205/?tattoo" />
-          <GalleryImage src="https://source.unsplash.com/random/201x206/?tattoo" />
-          <GalleryImage src="https://source.unsplash.com/random/201x207/?tattoo" />
-          <GalleryImage src="https://source.unsplash.com/random/201x208/?tattoo" />
-          <GalleryImage src="https://source.unsplash.com/random/201x209/?tattoo" />
+         {/* Dummy Data */}
+          <GalleryItem h="3" v="2">
+            <GalleryImage src="https://source.unsplash.com/random/600x400/?tattoo" />
+          </GalleryItem>
+          <GalleryItem>
+            <GalleryImage
+              src="https://source.unsplash.com/random/600x401/?tattoo"
+            />
+          </GalleryItem>
+          <GalleryItem>
+            <GalleryImage
+              src="https://source.unsplash.com/random/600x402/?tattoo"
+            />
+          </GalleryItem>
+          <GalleryItem h="2" v="2">
+            <GalleryImage
+              src="https://source.unsplash.com/random/600x403/?tattoo"
+            />
+          </GalleryItem>
+          <GalleryItem>
+            <GalleryImage
+              src="https://source.unsplash.com/random/600x404/?tattoo"
+            />
+          </GalleryItem>
+          <GalleryItem>
+            <GalleryImage
+              src="https://source.unsplash.com/random/600x405/?tattoo"
+            />
+          </GalleryItem>
+          <GalleryItem>
+            <GalleryImage
+              src="https://source.unsplash.com/random/600x406/?tattoo"
+            />
+          </GalleryItem>
+          <GalleryItem>
+            <GalleryImage
+              src="https://source.unsplash.com/random/600x407/?tattoo"
+            />
+          </GalleryItem>
+          <GalleryItem>
+            <GalleryImage
+              src="https://source.unsplash.com/random/600x408/?tattoo"
+            />
+          </GalleryItem>
+          <GalleryItem>
+            <GalleryImage
+              src="https://source.unsplash.com/random/600x409/?tattoo"
+            />
+          </GalleryItem>
+          <GalleryItem>
+            <GalleryImage
+              src="https://source.unsplash.com/random/600x410/?tattoo"
+            />
+          </GalleryItem>
         </Gallery>
       </SectionContent>
     </Section>

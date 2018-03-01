@@ -13,7 +13,7 @@ import { Main } from './Main';
 import Hero from './Hero';
 import { Section, SectionHeader, SectionContent, SectionFooter } from './Section';
 import { TagList, TagListItem } from './TagList';
-import { Gallery, GalleryImage } from './Gallery';
+import { Gallery, GalleryImage, GalleryItem } from './Gallery';
 import Footer from './Footer';
 
 export {
@@ -36,5 +36,6 @@ export {
   TagListItem,
   Gallery,
   GalleryImage,
+  GalleryItem,
   Footer
 };
