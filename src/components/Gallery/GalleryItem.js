@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import styled from 'styled-components';
 import FontAwesomeIcon from '@fortawesome/react-fontawesome';
 import { faExpandArrowsAlt } from '@fortawesome/fontawesome-free-solid/';
@@ -23,40 +23,21 @@ const GalleryItemOverlay = styled.div`
   align-content: center;
   color: white;
   background-color: rgba(0, 0, 0, 0.3);
+  opacity: 0;
+  transition: opacity 0.125s ease;
+
+  &:hover {
+    opacity: 1;
+  }
 `;
 
-class GalleryItem extends Component {
-  state = {
-    isHovered: false
-  };
-  handleMouseEnter = () => {
-    this.setState({ isHovered: true });
-  };
-
-  handleMouseLeave = () => {
-    this.setState({ isHovered: false });
-  };
-
-  render() {
-    let overlay = null;
-    if (this.state.isHovered) {
-      overlay = (
-        <GalleryItemOverlay>
-          <FontAwesomeIcon icon={faExpandArrowsAlt} size="3x" />
-        </GalleryItemOverlay>
-      );
-    }
-    return (
-      <StyledGalleryItem
-        onMouseEnter={this.handleMouseEnter}
-        onMouseLeave={this.handleMouseLeave}
-        {...this.props}
-      >
-        {this.props.children}
-        {overlay}
-      </StyledGalleryItem>
-    );
-  }
-}
+const GalleryItem = props => (
+  <StyledGalleryItem {...props}>
+    {props.children}
+    <GalleryItemOverlay>
+      <FontAwesomeIcon icon={faExpandArrowsAlt} size="3x" />
+    </GalleryItemOverlay>
+  </StyledGalleryItem>
+);
 
 export default GalleryItem;
