@@ -6,7 +6,7 @@ import scriptLoader from '../utils/scriptLoader';
 class GoogleMap extends Component {
   componentDidMount() {
     scriptLoader(
-      `https://maps.googleapis.com/maps/api/js?key=${process.env.GOOGLE_API}`,
+      `https://maps.googleapis.com/maps/api/js?key=${process.env.GATSBY_GOOGLE_API}`,
       () => {
         console.info('Rendering map...');
         this.map = new google.maps.Map(this.refs.map, {
