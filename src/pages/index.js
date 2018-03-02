@@ -19,7 +19,9 @@ import {
   GalleryItem
 } from '../components';
 import logo from '../images/logo.svg';
-import map from '../images/map-dark.jpg';
+// import Map from '../images/map-dark.jpg';
+import GoogleMap from '../components/GoogleMap';
+
 
 const IndexPage = () => (
   <React.Fragment>
@@ -244,7 +246,8 @@ const IndexPage = () => (
       </SectionContent>
     </Section>
     <Section id="map">
-      <img
+      <GoogleMap/>
+      {/* <img
         style={{
           margin: 0,
           objectFit: 'cover',
@@ -252,7 +255,7 @@ const IndexPage = () => (
           width: '100%'
         }}
         src={map}
-      />
+      /> */}
     </Section>
     {/* </main> */}
   </React.Fragment>
