@@ -15,6 +15,7 @@ import { Section, SectionHeader, SectionContent, SectionFooter } from './Section
 import { TagList, TagListItem } from './TagList';
 import { Gallery, GalleryImage, GalleryItem } from './Gallery';
 import Footer from './Footer';
+import ModalPortal from './ModalPortal';
 
 export {
   GridContainer,
@@ -37,5 +38,6 @@ export {
   Gallery,
   GalleryImage,
   GalleryItem,
-  Footer
+  Footer,
+  ModalPortal
 };

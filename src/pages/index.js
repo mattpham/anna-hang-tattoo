@@ -16,12 +16,13 @@ import {
   TagListItem,
   Gallery,
   GalleryImage,
-  GalleryItem
+  GalleryItem,
+  ModalPortal
 } from '../components';
 import logo from '../images/logo.svg';
+import ImageGallery from '../containers/ImageGallery';
 // import Map from '../images/map-dark.jpg';
 import GoogleMap from '../components/GoogleMap';
-
 
 const IndexPage = () => (
   <React.Fragment>
@@ -139,62 +140,64 @@ const IndexPage = () => (
         <h2 style={{ gridColumn: '1 / -1' }}>Gallery</h2>
       </SectionHeader>
       <SectionContent>
-        <Gallery>
-         {/* Dummy Data */}
-          <GalleryItem h="3" v="2">
-            <GalleryImage src="https://source.unsplash.com/random/600x400/?tattoo" />
-          </GalleryItem>
-          <GalleryItem>
-            <GalleryImage
-              src="https://source.unsplash.com/random/600x401/?tattoo"
-            />
-          </GalleryItem>
-          <GalleryItem>
-            <GalleryImage
-              src="https://source.unsplash.com/random/600x402/?tattoo"
-            />
-          </GalleryItem>
-          <GalleryItem h="2" v="2">
-            <GalleryImage
-              src="https://source.unsplash.com/random/600x403/?tattoo"
-            />
-          </GalleryItem>
-          <GalleryItem>
-            <GalleryImage
-              src="https://source.unsplash.com/random/600x404/?tattoo"
-            />
-          </GalleryItem>
-          <GalleryItem>
-            <GalleryImage
-              src="https://source.unsplash.com/random/600x405/?tattoo"
-            />
-          </GalleryItem>
-          <GalleryItem>
-            <GalleryImage
-              src="https://source.unsplash.com/random/600x406/?tattoo"
-            />
-          </GalleryItem>
-          <GalleryItem>
-            <GalleryImage
-              src="https://source.unsplash.com/random/600x407/?tattoo"
-            />
-          </GalleryItem>
-          <GalleryItem>
-            <GalleryImage
-              src="https://source.unsplash.com/random/600x408/?tattoo"
-            />
-          </GalleryItem>
-          <GalleryItem>
-            <GalleryImage
-              src="https://source.unsplash.com/random/600x409/?tattoo"
-            />
-          </GalleryItem>
-          <GalleryItem>
-            <GalleryImage
-              src="https://source.unsplash.com/random/600x410/?tattoo"
-            />
-          </GalleryItem>
-        </Gallery>
+        {/* <Gallery> */}
+        {/* Dummy Data */}
+        <ImageGallery
+          data={[
+            {
+              id: 0,
+              src: 'https://source.unsplash.com/random/600x400/?tattoo'
+            },
+            {
+              id: 1,
+              src: 'https://source.unsplash.com/random/600x401/?tattoo'
+            },
+            {
+              id: 2,
+              src: 'https://source.unsplash.com/random/600x402/?tattoo'
+            },
+            {
+              id: 3,
+              src: 'https://source.unsplash.com/random/600x403/?tattoo'
+            },
+            {
+              id: 4,
+              src: 'https://source.unsplash.com/random/600x404/?tattoo'
+            },
+            {
+              id: 5,
+              src: 'https://source.unsplash.com/random/600x405/?tattoo'
+            },
+            {
+              id: 6,
+              src: 'https://source.unsplash.com/random/600x406/?tattoo'
+            },
+            {
+              id: 7,
+              src: 'https://source.unsplash.com/random/600x407/?tattoo'
+            },
+            {
+              id: 8,
+              src: 'https://source.unsplash.com/random/600x408/?tattoo'
+            },
+            {
+              id: 9,
+              src: 'https://source.unsplash.com/random/600x409/?tattoo'
+            },
+            {
+              id: 10,
+              src: 'https://source.unsplash.com/random/600x410/?tattoo'
+            },
+            {
+              id: 11,
+              src: 'https://source.unsplash.com/random/600x411/?tattoo'
+            },
+            {
+              id: 12,
+              src: 'https://source.unsplash.com/random/600x412/?tattoo'
+            }
+          ]}
+        />
       </SectionContent>
     </Section>
     <Section id="contact-form">
@@ -246,7 +249,7 @@ const IndexPage = () => (
       </SectionContent>
     </Section>
     <Section id="map">
-      <GoogleMap/>
+      <GoogleMap />
       {/* <img
         style={{
           margin: 0,

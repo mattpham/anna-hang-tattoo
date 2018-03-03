@@ -32,7 +32,7 @@ const GalleryItemOverlay = styled.div`
 `;
 
 const GalleryItem = props => (
-  <StyledGalleryItem {...props}>
+  <StyledGalleryItem {...props} onClick={() => props.clickHandler(props.id)} >
     {props.children}
     <GalleryItemOverlay>
       <FontAwesomeIcon icon={faExpandArrowsAlt} size="3x" />
