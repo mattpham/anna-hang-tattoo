@@ -8,6 +8,10 @@ import {
 } from '@fortawesome/fontawesome-free-solid/';
 
 import {
+  Form,
+  FormInput,
+  FormTextArea,
+  FormSelect,
   Hero,
   Section,
   SectionHeader,
@@ -212,13 +216,17 @@ const IndexPage = () => (
             justifyItems: 'center'
           }}
         >
-          <input type="text" name="Name" placeholder="Name" />
-          <input type="email" name="Email" placeholder="Email" />
-          <input type="tel" name="Phone Number" placeholder="Phone Number" />
-          <input type="file" name="File" />
-          <input type="text" name="Subject" placeholder="Subject" />
-          <textarea name="Message" placeholder="Message" />
-          <button type="submit">Send</button>
+          <FormInput type="text" name="Name" placeholder="Name" />
+          <FormInput type="email" name="Email" placeholder="Email" />
+          <FormInput type="tel" name="Phone Number" placeholder="Phone Number" />
+          {/* <FormInput type="file" name="File" /> */}
+          <FormSelect type="text" name="Subject">
+            <option>Reason For Contacting</option>
+            <option value="tattoo">Looking For A Tattoo</option>
+            <option value="general">General Question</option>
+          </FormSelect>
+          <FormTextArea name="Message" placeholder="Message" />
+          <FormInput type="submit" value="Submit" />
         </form>
       </SectionContent>
     </Section>

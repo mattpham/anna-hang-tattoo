@@ -16,8 +16,13 @@ import { TagList, TagListItem } from './TagList';
 import { Gallery, GalleryImage, GalleryItem } from './Gallery';
 import Footer from './Footer';
 import ModalPortal from './ModalPortal';
+import { Form, FormInput, FormTextArea, FormSelect} from './Form';
 
 export {
+  Form,
+  FormInput,
+  FormTextArea,
+  FormSelect,
   GridContainer,
   GridItem,
   Header,
