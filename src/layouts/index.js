@@ -2,9 +2,10 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import Link from 'gatsby-link';
 import Helmet from 'react-helmet';
+import styledComponents, { ThemeProvider } from 'styled-components';
 import Responsive from 'react-responsive';
 import FontAwesomeIcon from '@fortawesome/react-fontawesome';
-import 'normalize.css';
+import {sizes} from '../utils/styles/media';
 import {
   faInstagram,
   faFlickr,
@@ -23,9 +24,14 @@ import {
   Main,
   Footer
 } from '../components';
+import theme from '../themes';
+
+const SocialNavList = NavList.extend`
+  flex-direction: row;
+`
 
 const ResponsiveMenu = props => (
-  <Responsive minWidth={800}>
+  <Responsive minWidth={sizes.small}>
     {matches =>
       matches ? (
         <Nav>{props.children}</Nav>
@@ -37,73 +43,58 @@ const ResponsiveMenu = props => (
 );
 
 const TemplateWrapper = ({ data, children }) => (
-  // <div style={{ display: 'grid', justifyContent: 'stretch', gridGap: '1rem', position: 'relative'}}>
-  <GridContainer id="grid-container">
-    <Helmet
-      title={data.site.siteMetadata.title}
-      meta={[
-        { name: 'description', content: 'Tattoo' },
-        { name: 'keywords', content: 'tattoo, art' }
-      ]}
-    />
-    {/* <header
-      role="banner"
-      style={{
-        position: 'absolute',
-        left: 0,
-        right: 0,
-        paddingTop: '1rem',
-        zIndex: 9999,
-        display: 'grid',
-        justifyContent: 'center',
-        // backgroundColor: '#fff3',
-        // borderBottom: '2px solid #0004',
-        // padding: '0 1rem',
-      }}
-    > */}
-    {/* <Header> */}
-    <ResponsiveMenu>
-      {/* <Nav flow="column"> */}
-      {/* Site Links */}
-      {/* <NavButton>Menu</NavButton> */}
-      <NavList>
-        <NavListItem>
-          <NavLink to="/">Home</NavLink>
-        </NavListItem>
-        <NavListItem>
-          <NavLink to="#about">About</NavLink>
-        </NavListItem>
-        <NavListItem>
-          <NavLink to="#specialties">Services</NavLink>
-        </NavListItem>
-        <NavListItem>
-          <NavLink to="#gallery">Gallery</NavLink>
-        </NavListItem>
-        <NavListItem>
-          <NavLink to="#contact-form">Contact</NavLink>
-        </NavListItem>
-      </NavList>
+  <ThemeProvider theme={theme}>
+    <GridContainer id="grid-container">
+      <Helmet
+        title={data.site.siteMetadata.title}
+        meta={[
+          { name: 'description', content: 'Tattoo' },
+          { name: 'keywords', content: 'tattoo, art' }
+        ]}
+      />
 
-      {/* Social Links */}
-      <NavList flow="column">
-        <NavListItem>
-          <NavLink to="/">
-            <FontAwesomeIcon icon={faInstagram} />
-          </NavLink>
-        </NavListItem>
-        <NavListItem>
-          <NavLink to="/">
-            <FontAwesomeIcon icon={faFacebook} />
-          </NavLink>
-        </NavListItem>
-        <NavListItem>
-          <NavLink to="/">
-            <FontAwesomeIcon icon={faFlickr} />
-          </NavLink>
-        </NavListItem>
-      </NavList>
+      {/* <Header> */}
+      <ResponsiveMenu>
+        {/* Site Links */}
+        {/* <NavButton>Menu</NavButton> */}
+        <NavList>
+          <NavListItem>
+            <NavLink to="/">Home</NavLink>
+          </NavListItem>
+          <NavListItem>
+            <NavLink to="#about">About</NavLink>
+          </NavListItem>
+          <NavListItem>
+            <NavLink to="#specialties">Services</NavLink>
+          </NavListItem>
+          <NavListItem>
+            <NavLink to="#gallery">Gallery</NavLink>
+          </NavListItem>
+          <NavListItem>
+            <NavLink to="#contact-form">Contact</NavLink>
+          </NavListItem>
+        </NavList>
 
-      {/* Language Links
+        {/* Social Links */}
+        <SocialNavList flow="column">
+          <NavListItem>
+            <NavLink to="/">
+              <FontAwesomeIcon icon={faInstagram} />
+            </NavLink>
+          </NavListItem>
+          <NavListItem>
+            <NavLink to="/">
+              <FontAwesomeIcon icon={faFacebook}/>
+            </NavLink>
+          </NavListItem>
+          <NavListItem>
+            <NavLink to="/">
+              <FontAwesomeIcon icon={faFlickr} />
+            </NavLink>
+          </NavListItem>
+        </SocialNavList>
+
+        {/* Language Links
           <NavList>
             <NavListItem>
               <Link to="/" style={{color: 'rgba(255,255,255,.8)'}}>English</Link>
@@ -113,16 +104,14 @@ const TemplateWrapper = ({ data, children }) => (
             </NavListItem>
           </NavList> */}
 
-      {/* Mobile Menu Toggle */}
+        {/* Mobile Menu Toggle */}
 
-      {/* </div> */}
-    </ResponsiveMenu>
-    {/* </Nav> */}
-    {/* </Header> */}
-    <Main>{children()}</Main>
-    <Footer>&copy;2018 Anna Hang Tattoo.</Footer>
-    {/* </div> */}
-  </GridContainer>
+        {/* </div> */}
+      </ResponsiveMenu>
+      {children()}
+      <Footer>&copy;2018 Anna Hang Tattoo.</Footer>
+    </GridContainer>
+  </ThemeProvider>
 );
 
 TemplateWrapper.propTypes = {

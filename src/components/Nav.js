@@ -1,46 +1,54 @@
 import styled from 'styled-components';
 import Link from 'gatsby-link';
+import media from '../utils/styles/media';
 
 const Nav = styled.nav`
   position: fixed;
-  padding: 1em;
-  top: 0;
-  left: 0;
-  right: 0;
-  display: grid;
-  grid-gap: 2em;
-  justify-content: stretch;
-  justify-items: center;
-  align-content: start;
-
-  @media (min-width: 600px) {
-    grid-auto-flow: column;
-    justify-content: end;
-    height: auto;
-    position: absolute;
+  top: 2em;
+  left: 2em;
+  right: 2em;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
   }
+  ${media.small`
+    flex-direction: row;
+    justify-content: center;
+
+    & ul~ul {
+      margin-left: 2em;
+    }
+  `}
+  ${media.large`
+    justify-content: flex-end;
+  `}
 `;
 
 const NavList = styled.ul`
-  display: grid;
-  grid-auto-flow: ${props => props.flow || ''};
-  grid-gap: 1em;
-  list-style: none;
   margin: 0;
-  align-content: center;
+  display: flex;
+  list-style: none;
+  flex-direction: column;
+  align-items: flex-end;
 
-  @media (min-width: 600px) {
-    grid-auto-flow: column;
-  }
+  ${media.small`
+    flex-direction: row;
+    & li~li {
+      margin-left: 1rem;
+    }
+  `};
 `;
 
 const NavListItem = styled.li`
   margin: 0;
-  align-self: center;
+  font-size: 2rem;
+  ${media.small`
+    font-size: 1rem;
+  `}
 `;
 
 const NavLink = styled(Link)`
-  padding: 5px;
+  padding: .25rem; 
   color: rgba(255, 255, 255, 0.6);
   transition: color 0.1s ease-in;
   &:hover {
@@ -50,7 +58,7 @@ const NavLink = styled(Link)`
 `;
 
 const NavButton = styled.button`
-  justify-self: end;
+  ${'' /* justify-self: end; */} align-self: flex-start;
   margin: 0;
   background: none;
   border: 2px solid rgba(255, 255, 255, 0.6);

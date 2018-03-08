@@ -14,6 +14,7 @@ const Hero = styled.section.attrs({
   background-attachment: fixed;
   height: 100vh;
   grid-gap: 2em;
+  margin-bottom: 1em;
 `;
 
 export default Hero;
