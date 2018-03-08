@@ -30,6 +30,12 @@ import ImageGallery from '../containers/ImageGallery';
 // import Map from '../images/map-dark.jpg';
 import GoogleMap from '../components/GoogleMap';
 
+const GalleryContent = SectionContent.extend`
+  justify-self: stretch;
+  justify-content stretch;
+  width: 100% !important;
+`;
+
 const IndexPage = () => (
   <React.Fragment>
     <Hero>
@@ -145,7 +151,7 @@ const IndexPage = () => (
         <SectionHeader>
           <h2 style={{ gridColumn: '1 / -1' }}>Gallery</h2>
         </SectionHeader>
-        <SectionContent>
+        <GalleryContent>
           {/* <Gallery> */}
           {/* Dummy Data */}
           <ImageGallery
@@ -204,7 +210,7 @@ const IndexPage = () => (
               }
             ]}
           />
-        </SectionContent>
+        </GalleryContent>
       </Section>
       <Section id="contact-form">
         <SectionHeader>
