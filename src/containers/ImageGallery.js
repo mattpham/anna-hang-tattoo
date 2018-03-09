@@ -3,6 +3,7 @@ import styled from 'styled-components';
 
 import { Gallery, GalleryItem, GalleryImage } from '../components';
 import ModalPortal from '../components/ModalPortal';
+import Img from 'gatsby-image';
 
 const ImageModal = styled.div`
   position: fixed;
@@ -23,14 +24,21 @@ class ImageGallery extends Component {
     elements: this.props.data,
     clicked: null
   };
-  handleClick = id => {
-    console.log(`Image ${id} clicked!`);
-    this.setState({ clicked: id });
+  handleClick = index => {
+    console.log(`Image ${index} clicked!`);
+    this.setState({ clicked: index });
   };
   mapImages(elements) {
-    return elements.map(ele => (
-      <GalleryItem id={ele.id} key={ele.id} clickHandler={this.handleClick}>
-        <GalleryImage src={ele.src} />
+    return elements.map(({ node }, index) => (
+      <GalleryItem
+        src={node.photo.file.url}
+        id={index}
+        key={node.id}
+        clickHandler={this.handleClick}
+      >
+        {/* <GalleryImage src={ele.src} /> */}
+
+        <Img sizes={node.photo.sizes} />
       </GalleryItem>
     ));
   }
@@ -45,7 +53,13 @@ class ImageGallery extends Component {
         {!isNaN(lastClicked) && typeof lastClicked == 'number' ? (
           <ModalPortal>
             <ImageModal>
-              <div style={{display: 'grid', gridAutoFlow: 'column', textAlign: 'center'}}>
+              <div
+                style={{
+                  display: 'grid',
+                  gridAutoFlow: 'column',
+                  textAlign: 'center'
+                }}
+              >
                 <button
                   onClick={() =>
                     this.setState({
@@ -67,7 +81,8 @@ class ImageGallery extends Component {
                   Next
                 </button>
               </div>
-              <img src={this.state.elements[lastClicked].src} />
+              {console.log(elements[lastClicked])}
+              <Img sizes={elements[lastClicked].node.photo.sizes} />
               <button onClick={() => this.setState({ clicked: null })}>
                 Close
               </button>
