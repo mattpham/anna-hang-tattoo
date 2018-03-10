@@ -1,6 +1,6 @@
 import React from 'react';
 import Link from 'gatsby-link';
-import styled, {css} from 'styled-components';
+import styled, { css } from 'styled-components';
 import FontAwesomeIcon from '@fortawesome/react-fontawesome';
 import Img from 'gatsby-image';
 import {
@@ -21,20 +21,15 @@ import {
   SectionContent,
   TagList,
   TagListItem,
-  Gallery,
-  GalleryImage,
-  GalleryItem,
-  ModalPortal
+  Gallery
 } from '../components';
 import logo from '../images/logo.svg';
-import ImageGallery from '../containers/ImageGallery';
-// import Map from '../images/map-dark.jpg';
 import GoogleMap from '../components/GoogleMap';
- const StyledImg = styled(Img)`
+const StyledImg = styled(Img)`
   display: grid;
- `;
+`;
 const IndexPage = ({ data }) => {
-  console.log(data);
+  console.log(data.allContentfulImage.edges.length);
   return (
     <React.Fragment>
       <Hero>
@@ -60,10 +55,6 @@ const IndexPage = ({ data }) => {
         <Section>
           <SectionHeader>Test</SectionHeader>
           <SectionContent>
-
-          {/* <Img outerWrapperClassName={StyledImg} sizes={data.allContentfulImage.edges[0].node.photo.sizes}/> */}
-          {/* <Img resolutions={data.allContentfulImage.edges[0].node.photo.resolutions}/> */}
-
           </SectionContent>
         </Section>
         <Section id="about">
@@ -156,65 +147,8 @@ const IndexPage = ({ data }) => {
           </SectionHeader>
           <SectionContent>
             {/* <Gallery> */}
-            {/* Dummy Data */}
-            <ImageGallery
-              data={data.allContentfulImage.edges}
 
-              // data={[
-              //   {
-              //     id: 0,
-              //     src: 'https://source.unsplash.com/random/600x400/?tattoo'
-              //   },
-              //   {
-              //     id: 1,
-              //     src: 'https://source.unsplash.com/random/600x401/?tattoo'
-              //   },
-              //   {
-              //     id: 2,
-              //     src: 'https://source.unsplash.com/random/600x402/?tattoo'
-              //   },
-              //   {
-              //     id: 3,
-              //     src: 'https://source.unsplash.com/random/600x403/?tattoo'
-              //   },
-              //   {
-              //     id: 4,
-              //     src: 'https://source.unsplash.com/random/600x404/?tattoo'
-              //   },
-              //   {
-              //     id: 5,
-              //     src: 'https://source.unsplash.com/random/600x405/?tattoo'
-              //   },
-              //   {
-              //     id: 6,
-              //     src: 'https://source.unsplash.com/random/600x406/?tattoo'
-              //   },
-              //   {
-              //     id: 7,
-              //     src: 'https://source.unsplash.com/random/600x407/?tattoo'
-              //   },
-              //   {
-              //     id: 8,
-              //     src: 'https://source.unsplash.com/random/600x408/?tattoo'
-              //   },
-              //   {
-              //     id: 9,
-              //     src: 'https://source.unsplash.com/random/600x409/?tattoo'
-              //   },
-              //   {
-              //     id: 10,
-              //     src: 'https://source.unsplash.com/random/600x410/?tattoo'
-              //   },
-              //   {
-              //     id: 11,
-              //     src: 'https://source.unsplash.com/random/600x411/?tattoo'
-              //   },
-              //   {
-              //     id: 12,
-              //     src: 'https://source.unsplash.com/random/600x412/?tattoo'
-              //   }
-              // ]}
-            />
+            <Gallery items={data.allContentfulImage.edges} />
           </SectionContent>
         </Section>
         <Section id="contact-form">
@@ -307,7 +241,7 @@ const IndexPage = ({ data }) => {
 export const query = graphql`
   query PageQuery {
     allContentfulImage {
-      totalCount     
+      totalCount
       edges {
         node {
           id
@@ -316,7 +250,7 @@ export const query = graphql`
             sizes(maxWidth: 1200) {
               ...GatsbyContentfulSizes
             }
-            file{
+            file {
               url
             }
           }

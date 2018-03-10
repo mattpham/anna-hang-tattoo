@@ -81,7 +81,6 @@ class ImageGallery extends Component {
                   Next
                 </button>
               </div>
-              {console.log(elements[lastClicked])}
               <Img sizes={elements[lastClicked].node.photo.sizes} />
               <button onClick={() => this.setState({ clicked: null })}>
                 Close

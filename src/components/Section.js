@@ -5,30 +5,18 @@ import styled from 'styled-components';
 const Section = styled.section`
   justify-items: stretch;
   display: grid;
-
-  ${'' /* grid-template-areas:
-    'header'
-    'content'
-    'footer'; */}
 `;
 
 const SectionHeader = styled.header`
-
   justify-self: center;
-  ${'' /* grid-area: header; */}
-  
-  ${'' /* h2 {
-    margin: 0;
-  } */}
 `;
 
 const SectionContent = styled.div`
   display: grid;
-  ${'' /* grid-area: content; */}
   justify-self: center;
   grid-gap: 1em;
   padding: 0 1em;
-
+  width: 100%;
 
   ${
     media.medium`
@@ -37,7 +25,7 @@ const SectionContent = styled.div`
   }
   ${
     media.xlarge`
-      width: ${sizes.xlarge}px;
+      max-width: ${sizes.xlarge}px;
     `
   }
   
