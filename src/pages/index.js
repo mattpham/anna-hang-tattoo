@@ -22,19 +22,15 @@ import {
   TagList,
   TagListItem,
   Gallery,
-  GalleryImage,
-  GalleryItem,
-  ModalPortal
 } from '../components';
 import logo from '../images/logo.svg';
-import ImageGallery from '../containers/ImageGallery';
 // import Map from '../images/map-dark.jpg';
 import GoogleMap from '../components/GoogleMap';
  const StyledImg = styled(Img)`
   display: grid;
  `;
 const IndexPage = ({ data }) => {
-  console.log(data);
+  console.log(data.allContentfulImage.edges.length);
   return (
     <React.Fragment>
       <Hero>
@@ -157,8 +153,8 @@ const IndexPage = ({ data }) => {
           <SectionContent>
             {/* <Gallery> */}
             {/* Dummy Data */}
-            <ImageGallery
-              data={data.allContentfulImage.edges}
+            <Gallery
+              items={data.allContentfulImage.edges}
 
               // data={[
               //   {

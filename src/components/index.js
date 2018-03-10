@@ -13,10 +13,10 @@ import { Main } from './Main';
 import Hero from './Hero';
 import { Section, SectionHeader, SectionContent, SectionFooter } from './Section';
 import { TagList, TagListItem } from './TagList';
-import { Gallery, GalleryImage, GalleryItem } from './Gallery';
 import Footer from './Footer';
 import ModalPortal from './ModalPortal';
 import { Form, FormInput, FormTextArea, FormSelect} from './Form';
+export { Gallery, GalleryItem } from './Gallery';
 
 export {
   Form,
@@ -40,9 +40,6 @@ export {
   SectionFooter,
   TagList,
   TagListItem,
-  Gallery,
-  GalleryImage,
-  GalleryItem,
   Footer,
   ModalPortal
 };
