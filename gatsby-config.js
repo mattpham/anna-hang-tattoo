@@ -31,5 +31,6 @@ module.exports = {
         accessToken: `${process.env.GATSBY_CONTENTFUL_API}`,
       },
     },
+    `gatsby-transformer-remark`,
   ]
 };
