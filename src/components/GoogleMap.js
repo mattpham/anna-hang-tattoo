@@ -228,7 +228,7 @@ class GoogleMap extends Component {
 
 const StyledMap = styled(GoogleMap)`
   width: 100vw;
-  height: 300px;
+  height: 24rem;
 `;
 
 

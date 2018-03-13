@@ -6,9 +6,9 @@ const Hero = styled.section.attrs({
   display: grid;
   justify-items: center;
   align-content: center;
-  background-blend-mode: multiply,multiply;
+  background-blend-mode: darken;
   background-image:
-    linear-gradient(to bottom, rgba(255,255,255,0.15) 0%, rgba(0,0,0,0.15) 100%), radial-gradient(at top center, rgba(90, 0,1,0.8) 0%, rgba(34,24,28,1) 120%), url("https://source.unsplash.com/random/?tattoo");
+    radial-gradient(ellipse at center, rgba(173,0,40,1) 0%, rgba(143,0,33,1) 44%, rgba(107,0,25,1) 100%), url("https://source.unsplash.com/random/?tattoo");
   background-size: cover;
   background-position: center;
   background-attachment: fixed;

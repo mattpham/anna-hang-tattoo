@@ -31,7 +31,7 @@ const SocialNavList = NavList.extend`
 `
 
 const ResponsiveMenu = props => (
-  <Responsive minWidth={sizes.small}>
+  <Responsive minWidth={sizes.phone}>
     {matches =>
       matches ? (
         <Nav>{props.children}</Nav>
@@ -68,7 +68,7 @@ const TemplateWrapper = ({ data, children }) => (
             <NavLink to="#specialties">Services</NavLink>
           </NavListItem>
           <NavListItem>
-            <NavLink to="#gallery">Gallery</NavLink>
+            <NavLink to="gallery">Gallery</NavLink>
           </NavListItem>
           <NavListItem>
             <NavLink to="#contact-form">Contact</NavLink>

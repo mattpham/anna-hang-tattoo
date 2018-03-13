@@ -21,25 +21,14 @@ import {
   SectionContent,
   TagList,
   TagListItem,
-<<<<<<< HEAD
   Gallery
 } from '../components';
 import logo from '../images/logo.svg';
-=======
-  Gallery,
-} from '../components';
-import logo from '../images/logo.svg';
-// import Map from '../images/map-dark.jpg';
->>>>>>> feature/contenful
 import GoogleMap from '../components/GoogleMap';
 const StyledImg = styled(Img)`
   display: grid;
 `;
 const IndexPage = ({ data }) => {
-<<<<<<< HEAD
-  console.log(data.allContentfulImage.edges.length);
-=======
->>>>>>> feature/contenful
   return (
     <React.Fragment>
       <Hero>
@@ -62,19 +51,11 @@ const IndexPage = ({ data }) => {
         </h2>
       </Hero>
       <Main>
-<<<<<<< HEAD
-        <Section>
-          <SectionHeader>Test</SectionHeader>
-          <SectionContent>
-          </SectionContent>
-        </Section>
-=======
->>>>>>> feature/contenful
         <Section id="about">
           <SectionHeader>
             <h2>Meet the Artist</h2>
           </SectionHeader>
-          <SectionContent>
+          <SectionContent columns={2}>
             <img
               src="https://source.unsplash.com/random/?portrait+person"
               alt="Biography Photo"
@@ -82,10 +63,13 @@ const IndexPage = ({ data }) => {
               style={{
                 objectFit: 'cover',
                 width: '100%',
-                margin: 0
+                margin: 0,
+                maxHeight: '32rem'
               }}
-            />
-            <div className="about__details" dangerouslySetInnerHTML={{__html: data.contentfulHome.about.copy.childMarkdownRemark.html}}>
+              />
+            <div>
+            <div className="about__details" dangerouslySetInnerHTML={{__html: data.contentfulHome.about.summary.childMarkdownRemark.html}}/>
+              <button>Read More</button>
             </div>
           </SectionContent>
         </Section>
@@ -107,14 +91,8 @@ const IndexPage = ({ data }) => {
           </SectionHeader>
           <SectionContent>
             {/* <Gallery> */}
-<<<<<<< HEAD
 
             <Gallery items={data.allContentfulImage.edges} />
-=======
-            <Gallery
-              items={data.allContentfulImage.edges}
-            />
->>>>>>> feature/contenful
           </SectionContent>
         </Section>
         <Section id="contact-form">
@@ -186,7 +164,7 @@ const IndexPage = ({ data }) => {
             </div>
           </SectionContent>
         </Section>
-        <Section id="map">
+        <Section id="map" full>
           <GoogleMap />
           {/* <img
         style={{
@@ -211,8 +189,13 @@ export const query = graphql`
         copy {
           childMarkdownRemark {
           html
+          }
         }
-      }
+        summary {
+          childMarkdownRemark {
+            html
+          }
+        }
       }
       specialties {
         id
