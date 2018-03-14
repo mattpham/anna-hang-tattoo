@@ -4,6 +4,7 @@ import styled from 'styled-components';
 import { Gallery, GalleryItem, GalleryImage } from '../components';
 import ModalPortal from '../components/ModalPortal';
 import Img from 'gatsby-image';
+import Masonry from 'react-masonry-component';
 
 const ImageModal = styled.div`
   position: fixed;
@@ -48,49 +49,53 @@ class ImageGallery extends Component {
     const lastClicked = this.state.clicked;
 
     return (
-      <Gallery>
-        {this.mapImages(elements)}
-        {!isNaN(lastClicked) && typeof lastClicked == 'number' ? (
-          <ModalPortal>
-            <ImageModal>
-              <div
-                style={{
-                  display: 'grid',
-                  gridAutoFlow: 'column',
-                  textAlign: 'center'
-                }}
-              >
-                <button
-                  onClick={() =>
-                    this.setState({
-                      clicked:
-                        (elements.length + lastClicked - 1) % elements.length
-                    })
-                  }
-                >
-                  Prev
-                </button>
-                {`Image #${lastClicked} of ${elements.length}`}
-                <button
-                  onClick={() =>
-                    this.setState({
-                      clicked: (lastClicked + 1) % elements.length
-                    })
-                  }
-                >
-                  Next
-                </button>
-              </div>
-              <Img sizes={elements[lastClicked].node.photo.sizes} />
-              <button onClick={() => this.setState({ clicked: null })}>
-                Close
-              </button>
-            </ImageModal>
-          </ModalPortal>
-        ) : (
-          ''
-        )}
-      </Gallery>
+
+      <Masonry>
+        <Img sizes={node.photo.sizes} />
+      </Masonry>
+      // <Gallery>
+      //   {this.mapImages(elements)}
+      //   {!isNaN(lastClicked) && typeof lastClicked == 'number' ? (
+      //     <ModalPortal>
+      //       <ImageModal>
+      //         <div
+      //           style={{
+      //             display: 'grid',
+      //             gridAutoFlow: 'column',
+      //             textAlign: 'center'
+      //           }}
+      //         >
+      //           <button
+      //             onClick={() =>
+      //               this.setState({
+      //                 clicked:
+      //                   (elements.length + lastClicked - 1) % elements.length
+      //               })
+      //             }
+      //           >
+      //             Prev
+      //           </button>
+      //           {`Image #${lastClicked} of ${elements.length}`}
+      //           <button
+      //             onClick={() =>
+      //               this.setState({
+      //                 clicked: (lastClicked + 1) % elements.length
+      //               })
+      //             }
+      //           >
+      //             Next
+      //           </button>
+      //         </div>
+      //         <Img sizes={elements[lastClicked].node.photo.sizes} />
+      //         <button onClick={() => this.setState({ clicked: null })}>
+      //           Close
+      //         </button>
+      //       </ImageModal>
+      //     </ModalPortal>
+      //   ) : (
+      //     ''
+      //   )}
+      // </Gallery>
     );
   }
 }

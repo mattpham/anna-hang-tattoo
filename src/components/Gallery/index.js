@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import Img from 'gatsby-image';
 
-
 import StyledGallery from './Gallery';
 import GalleryItem from './GalleryItem';
 import GalleryModal from './GalleryModal';
@@ -44,7 +43,7 @@ class Gallery extends Component {
         key={node.id}
         handleClick={() => this.handleClickImage(index)}
       >
-        <Img sizes={node.photo.sizes} />
+          <Img style={{height: 'inherit'}} sizes={node.photo.sizes} />
       </GalleryItem>
     ));
   }
@@ -56,6 +55,8 @@ class Gallery extends Component {
 
     return (
       <StyledGallery>
+        {this.renderGalleryItems()}
+        {this.renderGalleryItems()}
         {this.renderGalleryItems()}
         {console.log(items)}
           {this.state.isOpened ? (

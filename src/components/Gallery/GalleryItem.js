@@ -7,8 +7,6 @@ const Overlay = styled.div`
   justify-content: center;
   align-items: center;
   position: absolute;
-  height: 100%;
-  width: 100%;
   top: 0;
   bottom: 0;
   left: 0;
@@ -19,15 +17,24 @@ const Overlay = styled.div`
 const GalleryItemWrapper = styled.div`
   cursor: pointer;
   position: relative;
-  border-radius: .3em;
+  ${'' /* border-radius: .3em;
 
   & * {
     border-radius: .3em;
+  } */}
+  & > div {
+    height: 100%;
   }
-
+  @supports (display: grid) {
+    &:nth-child(6n + 1) {
+      grid-row: span 2;
+    }
+  }
+    
 `;
 
 const GalleryItemOverlay = Overlay.extend`
+cursor: zoom-in;
   transition: 0.125s ease;
   background-color: rgba(0, 0, 0, 0.5);
 
