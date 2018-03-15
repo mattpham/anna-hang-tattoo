@@ -1,6 +1,14 @@
 import React from 'react';
 import Link from 'gatsby-link';
+import Img from 'gatsby-image';
+
 import flattenTags from '../utils/flattenTags';
+import { Main, Section, SectionHeader, SectionContent } from '../components';
+
+import GalleryComponent from '../components/Gallery/Gallery';
+import GalleryItem, {
+  GalleryItemDetail
+} from '../components/Gallery/GalleryItem';
 
 const Gallery = ({ data, location }) => {
   // Flatten tags and add unique tag to map
@@ -17,31 +25,59 @@ const Gallery = ({ data, location }) => {
       flattenTags.call(tagMap, galleryTags);
     }
     if (galleryImages) {
-      galleryImages.forEach(image => image.tags && flattenTags.call(tagMap, image.tags));
+      galleryImages.forEach(
+        image => image.tags && flattenTags.call(tagMap, image.tags)
+      );
     }
 
     return (
-      <li key={node.id}>
+      <GalleryItem
+        key={node.id}
+        style={{ background: 'grey', gridRow: 'span 1' }}
+      >
         <Link data-id={node.id} to={`${location.pathname}/${node.slug}`}>
-          {node.title.title}
+          <div style={{ height: '100%' }}>
+            <GalleryItemDetail>
+              <span
+                style={{
+                  background: 'black',
+                  color: 'white',
+                  padding: '.5em',
+                  boxDecorationBreak: 'clone'
+                }}
+              >
+                {node.title.title}
+              </span>
+            </GalleryItemDetail>
+            {node.coverImage ? <Img sizes={node.coverImage.sizes} /> : ''}
+          </div>
         </Link>
-      </li>
+      </GalleryItem>
     );
   });
 
-  const tagNodes = Object.values(tagMap).map(({id, tag}) => <li key={id}><Link to={`/tag/${tag}`}>{tag}</Link></li>)
+  const tagNodes = Object.values(tagMap).map(({ id, tag }) => (
+    <li style={{ display: 'inline', padding: '0 1em' }} key={id}>
+      <Link to={`/tag/${tag}`}>{tag}</Link>
+    </li>
+  ));
 
   return (
-    <div>
-      <h1>The Gallery</h1>
-      <p>Tags</p>
-      <ul>
-        {tagNodes}
-      </ul>
-      <p>Galleries</p>
-      <ul>{galleryNodes}</ul>
-      <Link to="/">Go back to the homepage</Link>
-    </div>
+    <Main>
+      <Section>
+        <SectionHeader>
+          <h1>
+            <Link to="/gallery">The Gallery</Link>
+          </h1>
+          <p>Tags</p>
+          <ul>{tagNodes}</ul>
+          <p>Galleries</p>
+        </SectionHeader>
+        <SectionContent>
+          <GalleryComponent>{galleryNodes}</GalleryComponent>
+        </SectionContent>
+      </Section>
+    </Main>
   );
 };
 

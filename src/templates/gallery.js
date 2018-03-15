@@ -3,6 +3,9 @@ import Img from 'gatsby-image';
 import Link from 'gatsby-link';
 
 import flattenTags from '../utils/flattenTags';
+import { Main, Section, SectionHeader, SectionContent } from '../components';
+import Gallery from '../components/Gallery/Gallery';
+import GalleryItem from '../components/Gallery/GalleryItem';
 
 export default ({ data }) => {
   const { tags, title, images } = data.contentfulPhotoGallery;
@@ -20,28 +23,36 @@ export default ({ data }) => {
         flattenTags.call(tagMap, imageTags);
       }
       return (
-        <Link to={`/image/${id}/`} key={id}>
-          <Img
-            style={{ height: '250px', width: '250px' }}
-            resolutions={photo.resolutions}
-          />
-        </Link>
+        <GalleryItem>
+          <Link to={`/image/${id}/`} key={id}>
+            <Img sizes={photo.sizes} style={{ height: 'inherit', margin: 0 }} />
+          </Link>
+        </GalleryItem>
       );
     });
-    
-  const tagNodes = Object.values(tagMap).map(({id, tag}) => <li key={id}><Link to={`/tag/${tag}`}>{tag}</Link></li>)
 
+  const tagNodes = Object.values(tagMap).map(({ id, tag }) => (
+    <li style={{ display: 'inline', padding: '0 1em' }} key={id}>
+      <Link to={`/tag/${tag}`}>{tag}</Link>
+    </li>
+  ));
 
   return (
-    <div>
-      <h1>The Gallery</h1>
-      <h2>{data.contentfulPhotoGallery.title.title}</h2>
-      <p>Tags</p>
-      <ul>
-        {tagNodes}
-      </ul>
-      {imageNodes || 'No images'}
-    </div>
+    <Main>
+      <Section>
+        <SectionHeader>
+          <h1>
+            <Link to="/gallery">The Gallery</Link>
+          </h1>
+          <h2>{data.contentfulPhotoGallery.title.title}</h2>
+          <p>Tags</p>
+          <ul>{tagNodes}</ul>
+        </SectionHeader>
+        <SectionContent>
+          <Gallery>{imageNodes || 'No images'}</Gallery>
+        </SectionContent>
+      </Section>
+    </Main>
   );
 };
 
@@ -58,8 +69,8 @@ export const query = graphql`
       images {
         id
         photo {
-          resolutions(width: 250, height: 250) {
-            ...GatsbyContentfulResolutions
+          sizes(maxWidth: 1200) {
+            ...GatsbyContentfulSizes
           }
         }
         tags {

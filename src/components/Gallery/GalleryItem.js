@@ -14,26 +14,27 @@ const Overlay = styled.div`
   opacity: 0;
 `;
 
-const GalleryItemWrapper = styled.div`
+export const GalleryItem = styled.div`
   cursor: pointer;
   position: relative;
+  grid-row: span 1;
   ${'' /* border-radius: .3em;
 
   & * {
     border-radius: .3em;
   } */}
-  & > div {
+  & div {
     height: 100%;
   }
   @supports (display: grid) {
     &:nth-child(6n + 1) {
       grid-row: span 2;
     }
-  }
-    
+      }
+
 `;
 
-const GalleryItemOverlay = Overlay.extend`
+export const GalleryItemOverlay = Overlay.extend`
 cursor: zoom-in;
   transition: 0.125s ease;
   background-color: rgba(0, 0, 0, 0.5);
@@ -47,13 +48,12 @@ cursor: zoom-in;
   }
 `;
 
-const GalleryItem = props => (
-  <GalleryItemWrapper onClick={props.handleClick}>
-    {props.children}
-    <GalleryItemOverlay>
-      <FontAwesomeIcon icon="expand" size="lg" />
-    </GalleryItemOverlay>
-  </GalleryItemWrapper>
-);
+export const GalleryItemDetail = styled.div`
+  position: absolute;
+  ${'' /* left: -.5em; */}
+  z-index: 1;
+  overflow: hidden;
+`;
+
 
 export default GalleryItem;

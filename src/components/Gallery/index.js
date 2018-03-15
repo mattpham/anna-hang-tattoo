@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import Img from 'gatsby-image';
 
 import StyledGallery from './Gallery';
-import GalleryItem from './GalleryItem';
+import GalleryItem, {GalleryItemOverlay} from './GalleryItem';
 import GalleryModal from './GalleryModal';
 
 class Gallery extends Component {
@@ -41,9 +41,10 @@ class Gallery extends Component {
     return items.map(({ node }, index) => (
       <GalleryItem
         key={node.id}
-        handleClick={() => this.handleClickImage(index)}
+        onClick={() => this.handleClickImage(index)}
       >
           <Img style={{height: 'inherit'}} sizes={node.photo.sizes} />
+          <GalleryItemOverlay/>
       </GalleryItem>
     ));
   }
