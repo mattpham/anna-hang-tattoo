@@ -6,6 +6,8 @@ const theme = {
   darkergold: "#9F7B51",
   cherryred: "#820D25",
   darkerred: "#4A0013",
+  background: "white",
+  primary: "#EEEEEE"
 };
 
 export default theme;

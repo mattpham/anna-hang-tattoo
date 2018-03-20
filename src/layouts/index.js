@@ -2,10 +2,10 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import Link from 'gatsby-link';
 import Helmet from 'react-helmet';
-import styledComponents, { ThemeProvider } from 'styled-components';
+import styledComponents, { ThemeProvider, injectGlobal } from 'styled-components';
 import Responsive from 'react-responsive';
 import FontAwesomeIcon from '@fortawesome/react-fontawesome';
-import {sizes} from '../utils/styles/media';
+import { sizes } from '../utils/styles/media';
 import {
   faInstagram,
   faFlickr,
@@ -13,7 +13,6 @@ import {
   faYoutube
 } from '@fortawesome/fontawesome-free-brands';
 import {
-  GridContainer,
   Header,
   Nav,
   NavList,
@@ -26,9 +25,15 @@ import {
 } from '../components';
 import theme from '../themes';
 
+injectGlobal`
+  body {
+    background-color: ${theme.background};
+  }
+`
+
 const SocialNavList = NavList.extend`
   flex-direction: row;
-`
+`;
 
 const ResponsiveMenu = props => (
   <Responsive minWidth={sizes.phone}>
@@ -44,7 +49,7 @@ const ResponsiveMenu = props => (
 
 const TemplateWrapper = ({ data, children }) => (
   <ThemeProvider theme={theme}>
-    <GridContainer id="grid-container">
+    <div>
       <Helmet
         title={data.site.siteMetadata.title}
         meta={[
@@ -84,7 +89,7 @@ const TemplateWrapper = ({ data, children }) => (
           </NavListItem>
           <NavListItem>
             <NavLink to="/">
-              <FontAwesomeIcon icon={faFacebook}/>
+              <FontAwesomeIcon icon={faFacebook} />
             </NavLink>
           </NavListItem>
           <NavListItem>
@@ -110,7 +115,7 @@ const TemplateWrapper = ({ data, children }) => (
       </ResponsiveMenu>
       {children()}
       <Footer>&copy;2018 Anna Hang Tattoo.</Footer>
-    </GridContainer>
+    </div>
   </ThemeProvider>
 );
 

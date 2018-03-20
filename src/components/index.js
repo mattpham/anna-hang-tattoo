@@ -1,4 +1,3 @@
-import GridContainer from './GridContainer';
 import GridItem from './GridItem';
 import Header from './Header';
 import { Nav, NavList, NavListItem, NavLink, NavButton } from './Nav';
@@ -9,7 +8,8 @@ import {
   Section,
   SectionHeader,
   SectionContent,
-  SectionFooter
+  SectionFooter,
+  SectionWrapper
 } from './Section';
 import { TagList, TagListItem } from './TagList';
 import Footer from './Footer';
@@ -22,7 +22,6 @@ export {
   FormInput,
   FormTextArea,
   FormSelect,
-  GridContainer,
   GridItem,
   Header,
   Nav,
@@ -37,6 +36,7 @@ export {
   SectionHeader,
   SectionContent,
   SectionFooter,
+  SectionWrapper,
   TagList,
   TagListItem,
   Footer,

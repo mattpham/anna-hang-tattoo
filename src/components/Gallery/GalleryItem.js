@@ -17,7 +17,7 @@ const Overlay = styled.div`
 export const GalleryItem = styled.div`
   cursor: pointer;
   position: relative;
-  grid-row: span 1;
+  ${'' /* grid-row: span 1; */}
   ${'' /* border-radius: .3em;
 
   & * {

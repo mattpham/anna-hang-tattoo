@@ -1,6 +1,11 @@
 import Typography from 'typography';
 import lawtonTheme from 'typography-theme-lawton';
 
-const typography = new Typography(lawtonTheme)
+// lawtonTheme.overrideThemeStyles = ({ rhythm }, options ) => ({
+//   body: {
+//   }
+// })
+
+const typography = new Typography()
 
 export default typography;
