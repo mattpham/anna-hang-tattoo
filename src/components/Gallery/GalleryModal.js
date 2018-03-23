@@ -19,7 +19,7 @@ const StyledModalWrapper = styled.div`
   display: flex;
   color: white;
   background-color: rgba(0, 0, 0, 0.3);
-  transition: opacity 0.125s ease;
+  z-index: 1;
 `;
 
 const InnerWrapper = styled.div`

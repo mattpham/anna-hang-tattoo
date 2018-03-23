@@ -1,11 +1,9 @@
 import Typography from 'typography';
-import lawtonTheme from 'typography-theme-lawton';
+import wordpressTheme from 'typography-theme-wordpress-2012';
 
-// lawtonTheme.overrideThemeStyles = ({ rhythm }, options ) => ({
-//   body: {
-//   }
-// })
+wordpressTheme.baseFontSize = '16px';
+wordpressTheme.baseLineHeight = 1.5;
 
-const typography = new Typography()
+const typography = new Typography(wordpressTheme)
 
 export default typography;

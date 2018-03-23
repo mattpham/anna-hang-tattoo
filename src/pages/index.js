@@ -75,7 +75,7 @@ const IndexPage = ({ data }) => {
       </Hero>
       <Section id="about" maxHeight="30rem">
         <SectionHeader>
-          <h1>Meet the Artist</h1>
+          <h1>Our Artist</h1>
         </SectionHeader>
         <SectionWrapper>
           <SectionContent>
@@ -101,7 +101,7 @@ const IndexPage = ({ data }) => {
 
       {/* Specialties */}
 
-      <Section id="specialties">
+      {/* <Section id="specialties">
         <SectionHeader>
           <h1>Services</h1>
         </SectionHeader>
@@ -112,10 +112,10 @@ const IndexPage = ({ data }) => {
             ))}
           </TagList>
         </SectionContent>
-      </Section>
+      </Section> */}
       <Section id="gallery">
         <SectionHeader>
-          <h1 style={{ gridColumn: '1 / -1' }}>Gallery</h1>
+          <h1 style={{ gridColumn: '1 / -1' }}>Latest Work</h1>
         </SectionHeader>
         <SectionContent>
           {/* <Gallery> */}
@@ -192,7 +192,7 @@ const IndexPage = ({ data }) => {
           </div>
         </SectionContent>
       </Section>
-      <Section id="map">
+      <Section id="map" full>
         <GoogleMap />
         {/* <img
         style={{

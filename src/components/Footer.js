@@ -1,6 +1,7 @@
 import styled from 'styled-components';
-
+import { rhythm } from '../utils/typography';
 const Footer = styled.footer`
+  font-size: ${rhythm(1/2)};
   display: grid;
   background: #21252a;
   color: #fbfbfb;

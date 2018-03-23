@@ -10,7 +10,7 @@ const TagList = styled.ul`
 `;
 
 const TagListItem = styled.li`
-  margin-right: 1rem;
+  ${'' /* margin-right: 1rem; */}
   ${'' /* border: ${rhythm(1/8)} solid #6f533a; */}
   padding: ${rhythm(1/8)} ${rhythm(1/2)};
   ${'' /* color: #6f533a; */}

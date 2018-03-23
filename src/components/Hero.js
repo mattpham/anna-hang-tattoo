@@ -19,6 +19,7 @@ const HeroImage = styled.section.attrs({
   background-attachment: fixed;
   display: flex;
   height: 100vh;
+  width: 100%;
   padding-top: ${rhythm(4)};
   ${'' /* margin-bottom: 1em; */}
 `;
@@ -27,14 +28,11 @@ const HeroContent = styled.div`
   width: 100%;
   display: flex;
   flex-direction: column;
-  justify-content: space-around;
+  justify-content: center;
   align-items: center;
     ${'' /* margin: auto; */}
     ${'' /* max-width: 100%; */}
     text-align: center;
-    & h1 {
-      font-size: 4rem;
-    }
 `;
 
 const Hero = props => (
