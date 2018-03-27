@@ -40,5 +40,5 @@ class Nav extends Component {
   }
 }
 
-export { Nav };
-export { default as NavList, NavListSocial } from './NavList';
+export default Nav;
+export { NavList, NavListSocial } from './NavList';

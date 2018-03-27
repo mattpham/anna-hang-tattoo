@@ -57,8 +57,6 @@ class Gallery extends Component {
     return (
       <StyledGallery>
         {this.renderGalleryItems()}
-        {this.renderGalleryItems()}
-        {this.renderGalleryItems()}
         {console.log(items)}
           {this.state.isOpened ? (
             <GalleryModal

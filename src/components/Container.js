@@ -1,9 +1,8 @@
 import styled from 'styled-components';
 
-const Main = styled.main`
+const Container = styled.div`
   display: flex;
   flex-direction: column;
-  ${'' /* align-items: stretch; */}
 `;
 
-export { Main };
+export default Container;

@@ -1,36 +1,19 @@
-import GridItem from './GridItem';
 import Header from './Header';
 import { Main } from './Main';
 import Hero from './Hero';
-import {
-  Section,
-  SectionHeader,
-  SectionContent,
-  SectionFooter,
-  SectionWrapper
-} from './Section';
 import { TagList, TagListItem } from './TagList';
-import Footer from './Footer';
 import { Form, FormInput, FormTextArea, FormSelect } from './Form';
 export { Gallery, GalleryItem } from './Gallery';
 export { default as ModalPortal } from './ModalPortal';
-
+export * from './Section';
+export * from './Footer';
+export { default as Nav, NavList, NavListSocial} from './Nav';
 export {
   Form,
-  FormInput,
-  FormTextArea,
-  FormSelect,
-  GridItem,
-  Header,
-  Main,
-  Hero,
-  Section,
-  SectionHeader,
-  SectionContent,
-  SectionFooter,
-  SectionWrapper,
-  TagList,
-  TagListItem,
-  Footer,
-};
-
+  Input as FormInput,
+  Submit as FormSubmit,
+  TextArea as FormTextArea,
+  Select as FormSelect
+} from './Form';
+export { default as Container } from './Container';
+export { Header, Main, Hero, TagList, TagListItem };

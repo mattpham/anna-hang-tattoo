@@ -13,14 +13,15 @@ import {
 import {
   Main,
   Form,
+  FormSelect,
+  FormSubmit,
   FormInput,
   FormTextArea,
-  FormSelect,
   Hero,
   Section,
   SectionHeader,
   SectionContent,
-  SectionWrapper,
+  SectionRow,
   TagList,
   TagListItem,
   Gallery
@@ -30,17 +31,18 @@ import GoogleMap from '../components/GoogleMap';
 
 const Button = styled.button`
   margin: ${rhythm(1)};
-  background: none;
   border-radius: 3px;
   border: ${rhythm(1 / 12)} solid white;
   padding: ${rhythm(1/2)} ${rhythm(1)};
   outline: none;
-  text-transform: uppercase;
-  color: white;
+  ${'' /* text-transform: uppercase; */}
+  background: white;
+  color: black;
+  transition: all .2s ease-in
 
   &:hover {
-    background: white;
-    color: black;
+    background: gray;
+    color: white;
   }
 `;
 
@@ -50,10 +52,10 @@ const Avatar = styled.div`
   }
 `;
 
+
 const IndexPage = ({ data }) => {
   return (
-    // <React.Fragment>
-    <Main>
+    <React.Fragment>
       <Hero>
         <img
           src={logo}
@@ -77,7 +79,7 @@ const IndexPage = ({ data }) => {
         <SectionHeader>
           <h1>Our Artist</h1>
         </SectionHeader>
-        <SectionWrapper>
+        <SectionRow>
           <SectionContent>
             <Avatar>
               <Img
@@ -94,9 +96,9 @@ const IndexPage = ({ data }) => {
                   data.contentfulHome.about.summary.childMarkdownRemark.html
               }}
             />
-            <button>Read More</button>
+            <button>Learn More</button>
           </SectionContent>
-        </SectionWrapper>
+        </SectionRow>
       </Section>
 
       {/* Specialties */}
@@ -123,12 +125,13 @@ const IndexPage = ({ data }) => {
           <Gallery items={data.allContentfulImage.edges} />
         </SectionContent>
       </Section>
-      <Section id="contact-form">
+      <Section id="contact-form" bgColor='#021300'>
         <SectionHeader>
-          <h1>Send a Message</h1>
+          <h1 style={{color: '#fff'}}>Send a Message</h1>
+          <p style={{color: '#fff'}}>Interested in a new tattoo? Contact us below to set up an appointment!</p>
         </SectionHeader>
         <SectionContent>
-          <form
+          <Form
             style={{
               display: 'grid',
               gridGap: '1rem',
@@ -149,8 +152,8 @@ const IndexPage = ({ data }) => {
               <option value="general">General Question</option>
             </FormSelect>
             <FormTextArea name="Message" placeholder="Message" />
-            <FormInput type="submit" value="Submit" />
-          </form>
+            <FormSubmit />
+          </Form>
         </SectionContent>
       </Section>
       <Section id="contact-info">
@@ -158,14 +161,8 @@ const IndexPage = ({ data }) => {
           <h1>Contact</h1>
         </SectionHeader>
         <SectionContent flow="row">
-          <div className="contact-phone">
-            <FontAwesomeIcon icon="phone" />
-            <span> (714) 299-3387</span>
-          </div>
-          <div className="contact-email">
-            <FontAwesomeIcon icon="envelope" />
-            <span> info@annahangtattoovn.com</span>
-          </div>
+            <div>telephone: (714) 299-3387</div>
+            <div>email: info@annahangtattoovn.com</div>
         </SectionContent>
       </Section>
       <Section id="address">
@@ -181,9 +178,6 @@ const IndexPage = ({ data }) => {
               gridTemplateColumns: 'auto 1fr'
             }}
           >
-            <div>
-              <FontAwesomeIcon icon={faMapMarker} />
-            </div>
             <div>
               <div>13071 Brookhurst St.,</div>
               <div>#225</div>
@@ -205,8 +199,7 @@ const IndexPage = ({ data }) => {
       /> */}
       </Section>
       {/* </main> */}
-    </Main>
-    // </React.Fragment>
+    </React.Fragment>
   );
 };
 

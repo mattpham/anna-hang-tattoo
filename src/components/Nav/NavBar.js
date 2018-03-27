@@ -13,10 +13,7 @@ flex-direction: row;
 justify-content: flex-end;
 padding: 0 ${rhythm(1)};
 background: white;
-& ${NavList} {
-  padding: 0 ${rhythm(1)};
-}
-border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+border-bottom: 1px solid rgba(0,0,0,.1);
 `;
 
 export default NavBar;

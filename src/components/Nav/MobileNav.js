@@ -23,16 +23,12 @@ const transitionStyles = {
 
 const Wrapper = styled.div`
   position: fixed;
-  ${'' /* height: 100%; */}
-  ${'' /* width: 100%;  */}
-  
   top: 0;
   right: 0;
   bottom: 0;
   left: 0;
   z-index: 1;
   background: white;
- 
 `;
 
 const Top = styled.div`
@@ -42,7 +38,7 @@ const Top = styled.div`
   padding: 0 ${rhythm(1)};
 `;
 
-const StyledNav = styled.nav`
+export const StyledMobileNav = styled.nav`
 display: flex;
   padding-top: ${rhythm(2)}
   justify-content: center;
@@ -55,7 +51,7 @@ display: flex;
     margin-right: ${rhythm(1)};
 
     :not(:last-child) {
-      margin-bottom: ${rhythm(1/2)};
+      margin-bottom: ${rhythm(1 / 2)};
     }
   }
   & > ${NavList} {
@@ -68,18 +64,18 @@ const MobileNav = props => (
   <ModalPortal>
     <Transition in={props.isToggled} timeout={duration} appear={true}>
       {state => (
-        <Wrapper style={{
-          ...defaultStyle,
-          ...transitionStyles[state]
-        }}>
+        <Wrapper
+          style={{
+            ...defaultStyle,
+            ...transitionStyles[state]
+          }}
+        >
           <Top>
-            <NavMenuButton handleClick={props.handleClick}><FontAwesomeIcon icon="times" /></NavMenuButton>
+            <NavMenuButton handleClick={props.handleClick}>
+              <FontAwesomeIcon icon="times" />
+            </NavMenuButton>
           </Top>
-          <StyledNav
-            id="mobile-nav"
-          >
-            {props.children}
-          </StyledNav>
+          <StyledMobileNav id="mobile-nav">{props.children}</StyledMobileNav>
         </Wrapper>
       )}
     </Transition>

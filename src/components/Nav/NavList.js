@@ -1,11 +1,22 @@
 import styled from 'styled-components';
 import { rhythm } from '../../utils/typography';
+import NavBar from './NavBar';
+import { StyledMobileNav } from './MobileNav';
 
-const NavList = styled.div`
+export const NavList = styled.div`
   height: 100%;
   display: flex;
   align-items: center;
-  
+
+  ${NavBar} & {
+    padding: 0 ${rhythm(1)};
+  }
+
+  ${StyledMobileNav} & {
+    flex-direction: column;
+    align-items: flex-end;
+  }
+
   & a {
     margin: 0 ${rhythm(1 / 2)};
     transition: color 0.1s ease-in;
@@ -39,8 +50,7 @@ const NavList = styled.div`
 `;
 
 export const NavListSocial = NavList.extend`
-  flex-direction: row;
-`
-
-
-export default NavList;
+  ${StyledMobileNav} & {
+    flex-direction: row;
+  }
+`;
