@@ -1,38 +1,40 @@
-import styled, { css } from 'styled-components';
-import { rhythm } from '../utils/typography';
+import styled from 'styled-components';
 
-const inputStyles = css`
-  transition: background-color 0.2s ease;
-  background-color: #f4f4f4;
-  border-radius: 3px;
-  border: 0;
-  padding: 1em;
-  width: 100%;
+import Button from './Button';
+import { BODY_FONT_FAMILY } from '../utils/styles/typography';
+
+export const Form = styled.form`
+  max-width: 48em;
+  margin: 0 auto;
+  text-align: center;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
 `;
-
-export const Form = styled.form``;
 
 export const Input = styled.input`
-  ${inputStyles} 
-`;
+  font-family: ${BODY_FONT_FAMILY};
+  display: block;
+  width: 100%;
+  margin-bottom: 1.5rem;
+  padding: 1.5em;
+  outline-style: none;
+  border: 1px solid #fff;
+  transition: border-color 0.1s ease-in;
 
-export const Submit = Input.extend.attrs({
-  type: 'submit',
-  value: 'Submit'
-})`
-  background-color: #c0b283;
-  color: #f4f4f4;
-  &:hover {
-    background-color: gray;
+  &:focus {
+    border-color: var(--accent-color-secondary);
   }
 `;
 
-export const TextArea = styled.textarea.attrs({
-})`
-  ${inputStyles}
+export const TextArea = Input.withComponent('textarea').extend`
+  height: 10em;
   resize: vertical;
 `;
 
-export const Select = styled.select`
-    ${inputStyles}
-`;
+export const Select = Input.withComponent('select');
+
+export const Submit = Button.extend.attrs({
+  type: 'submit',
+  value: 'Submit',
+})``;

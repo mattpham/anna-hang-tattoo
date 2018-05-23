@@ -1,62 +1,60 @@
-import React from 'react';
+import styled, { css } from 'styled-components';
 
-import media, { sizes } from '../utils/styles/media';
-import styled from 'styled-components';
-import { rhythm } from '../utils/typography';
-import {
-  DEFAULT_WIDTH,
-  LARGE_DISPLAY_WIDTH
-} from 'typography-breakpoint-constants';
+import { maxWidth } from '../utils/styles/width';
+import { BLACK_25 } from '../utils/styles/colors';
+import { desktop } from '../utils/styles/media';
+import { HEADER_FONT_FAMILY, stepUpThree } from '../utils/styles/typography';
 
-const StyledSection = styled.section`
-  background-color: ${props => (props.bgColor ? props.bgColor : '')};
-`;
-
-const Wrapper = styled.div`
-  ${StyledSection} & {
-    background-color: ${props => (props.fgColor ? props.fgColor : '')};
-    padding: ${props => (props.full ? '' : rhythm(1))};
-    margin: 0 auto;
-    max-width: ${props => (props.full ? '100%' : DEFAULT_WIDTH)};
+const SectionDivider = css`
+  &:after {
+    width: 100%;
+    content: '';
+    height: 1px;
+    position: absolute;
+    background: ${BLACK_25};
   }
 `;
 
-export const Section = props => (
-  <StyledSection {...props}>
-    <Wrapper fgColor={props.fgColor} full={props.full}>
-      {props.children}
-    </Wrapper>
-  </StyledSection>
-);
-
-export const SectionHeader = styled.header`
-  padding: 0 ${rhythm(1)};
-  padding-top: ${rhythm(1)};
-  text-align: center;
+export const Section = styled.section`
+  background-color: ${props => (props.bgColor ? props.bgColor : '')};
+  text-align: ${props => (props.center ? 'center' : '')};
+  ${props => (props.divider ? SectionDivider : '')};
 `;
 
 export const SectionContent = styled.div`
-  flex: 1 1 0;
-  align-self: ${props => (props.align ? props.align : '')};
-  padding: 0 ${rhythm(1)};
+  padding: 3rem 1.5rem;
+  ${maxWidth};
+  margin: 0 auto;
+  color: ${props => (props.invert ? 'rgba(255,255,255,.8)' : 'var(--text-color-secondary)')};
 
-  :not(:last-child) {
-    margin-bottom: ${rhythm(1)};
-
-    ${media.tablet`
-      margin-bottom: 0;
-    `};
-  }
+  ${desktop`
+    padding-left: 3rem;
+    padding-right: 3rem;
+  `};
 `;
 
 export const SectionRow = styled.div`
   display: flex;
-  flex-direction: column;
-  ${media.tablet`
-    flex-direction: row;
-  `};
+  flex-flow: row wrap;
+  align-items: stretch;
+  margin-left: -1.5rem;
+  margin-right: -1.5rem;
 `;
 
-export const SectionFooter = styled.footer`
-  ${'' /* grid-area: footer; */};
+export const SectionColumn = styled.div`
+  padding: 0 1.5rem;
+  flex: 1 1 100%;
+  text-align: ${props => (props.center ? 'center' : '')};
+  ${desktop`0
+      flex-basis: 0;
+    `};
+`;
+
+export const SectionTitle = styled.h2`
+  color: ${props => (props.invert ? '#FFF' : 'var(--text-color-primary)')};
+  font-family: ${HEADER_FONT_FAMILY};
+  font-size: ${stepUpThree.fontSize};
+  line-height: ${stepUpThree.lineHeight};
+  text-align: center;
+  margin-bottom: 0;
 `;

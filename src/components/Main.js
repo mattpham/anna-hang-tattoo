@@ -3,7 +3,8 @@ import styled from 'styled-components';
 const Main = styled.main`
   display: flex;
   flex-direction: column;
-  ${'' /* align-items: stretch; */}
+  margin-top: 4rem;
+  flex: 1;
 `;
 
-export { Main };
+export default Main;
