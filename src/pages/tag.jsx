@@ -8,7 +8,7 @@ import GalleryComponent from '../components/Gallery/Gallery';
 import GalleryNav from '../components/Gallery/GalleryNav';
 
 const GalleryPage = ({ data }) => {
-  const galleryNodes = data.allContentfulTag.edges.map(({ node }) => (
+  const galleryNodes = data.allContentfulTag.edges.map(({ node }) => node.image && (
     <div key={node.id}>
       <Link to={`/tag/${node.tag}`}>
         <Img
