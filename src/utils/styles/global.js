@@ -57,4 +57,9 @@ export default injectGlobal`
    p, ul {
     margin: 0 0 1.5rem;
   }
+
+  svg {
+    width: 1em;
+    height: 1em;
+  }
 `;

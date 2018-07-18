@@ -207,7 +207,7 @@ export const query = graphql`
         ...GatsbyContentfulSizes
       }
     }
-    allContentfulImage {
+    allContentfulImage(limit: 10) {
       totalCount
       edges {
         node {
