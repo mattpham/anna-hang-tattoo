@@ -3,5 +3,14 @@
  *
  * See: https://www.gatsbyjs.org/docs/browser-apis/
  */
+// import React from 'react';
+// import { ThemeProvider } from 'styled-components';
+// import theme from './src/themes';
 
- // You can delete this file if you're not using it
+// exports.wrapRootComponent = ({ Root }) => {
+//   return () => (
+//     <ThemeProvider theme={theme}>
+//       <Root />
+//     </ThemeProvider>
+//   );
+// };

@@ -1,13 +1,15 @@
-# gatsby-starter-default
-The default Gatsby starter
+# Anna Hang Tattoo
+Responsive portfolio and business website for a local tattoo business.
 
-For an overview of the project structure please refer to the [Gatsby documentation - Building with Components](https://www.gatsbyjs.org/docs/building-with-components/)
+**Note:** This website is a prototype and not fully implemented. This repository serves mainly as a reference for me.
 
-Install this starter (assuming Gatsby is installed) by running from your CLI:
-```
-gatsby new gatsby-example-site
-```
+View a live version of the website [here](https://trusting-nobel-3252d2.netlify.com/).
 
-## Deploy
+![Website Screenshot](/website-screenshot.jpg)
 
-[![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/gatsbyjs/gatsby-starter-default)
+## Built With
+- [Gatsby](https://www.gatsbyjs.org/)
+- [React](https://reactjs.org/)
+- [Netlify](https://www.netlify.com/)
+- [Contentful](https://www.contentful.com/)
+- [Styled Components](https://www.styled-components.com/)
